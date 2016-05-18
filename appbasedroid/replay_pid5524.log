@@ -1,0 +1,20 @@
+JvmtiExport can_access_local_variables 0
+JvmtiExport can_hotswap_or_post_breakpoint 0
+JvmtiExport can_post_on_exceptions 0
+# 140 ciObject found
+ciMethod java/lang/Object <init> ()V 4097 1 8962 0 -1
+ciMethod java/lang/String <init> ([CII)V 3209 1 2927 0 -1
+ciMethod java/lang/String charAt (I)C 4097 1 25641 0 -1
+ciMethod java/lang/RuntimeException <init> (Ljava/lang/String;)V 0 0 1 0 -1
+ciMethod java/lang/AbstractStringBuilder <init> (I)V 1169 1 987 0 -1
+ciMethod java/lang/AbstractStringBuilder ensureCapacityInternal (I)V 2185 1 13836 0 -1
+ciMethod java/lang/AbstractStringBuilder expandCapacity (I)V 785 1 862 0 -1
+ciMethod java/lang/AbstractStringBuilder append (Ljava/lang/String;)Ljava/lang/AbstractStringBuilder; 2313 1 1738 0 -1
+ciMethod java/lang/AbstractStringBuilder append (C)Ljava/lang/AbstractStringBuilder; 2529 1 11963 0 -1
+ciMethod java/lang/StringBuilder <init> ()V 849 1 515 0 -1
+ciMethod java/lang/StringBuilder append (Ljava/lang/String;)Ljava/lang/StringBuilder; 2025 1 1558 0 -1
+ciMethod java/lang/StringBuilder append (C)Ljava/lang/StringBuilder; 4097 1 5771 0 -1
+ciMethod java/lang/StringBuilder toString ()Ljava/lang/String; 961 1 670 0 -1
+ciMethodData java/lang/Object <init> ()V 2 8964 orig 264 184 158 173 100 0 0 0 0 136 4 92 22 0 0 0 0 32 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 33 8 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 3 0 3 0 0 0 0 0 0 0 255 255 255 255 0 0 0 0 0 0 0 0 data 0 oops 0
+ciMethodData java/lang/String charAt (I)C 2 25641 orig 264 184 158 173 100 0 0 0 0 56 61 92 22 0 0 0 0 120 1 0 0 32 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 73 17 3 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 4 0 1 0 80 0 0 0 255 255 255 255 7 0 1 0 0 0 0 0 data 10 0x10007 0x0 0x40 0x6229 0xa0007 0x6229 0x30 0x0 0x120002 0x0 oops 0
+ciMethodData java/lang/AbstractStringBuilder ensureCapacityInternal (I)V 2 13836 orig 264 184 158 173 100 0 0 0 0 48 10 99 22 0 0 0 0 160 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 77 68 79 32 101 120 116 114 97 32 100 97 116 97 32 108 111 99 107 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 17 1 0 0 217 167 1 0 1 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 6 0 4 0 1 0 80 0 0 0 255 255 255 255 7 0 7 0 0 0 0 0 data 10 0x70007 0x31ff 0x50 0x2fc 0xc0005 0x0 0x16f4c520 0x275 0x16f4c3e0 0x87 oops 2
