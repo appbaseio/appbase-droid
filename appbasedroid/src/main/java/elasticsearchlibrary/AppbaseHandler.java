@@ -33,7 +33,6 @@ public abstract class AppbaseHandler implements AsyncHandler<String> {
 	}
 
 	public State onHeadersReceived(HttpResponseHeaders arg0) throws Exception {
-		System.out.println(arg0.getHeaders().toString());
 		return State.CONTINUE;
 	}
 

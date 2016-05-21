@@ -21,14 +21,14 @@ public class Trial {
             "\"message\":\"trying out Elasticsearch\"" +
             "}";
     String[] types={"books","departments"};
-    ArrayList<String> createdIds= new ArrayList<String>();
+    static ArrayList<String> createdIds= new ArrayList<String>();
     
-    Random r=null;
-    public String generateId(){
+    static Random r=null;
+    public static String generateId(){
         if(r==null){
             r=new Random();
         }
-        int n=r.nextInt(4);
+        int n=r.nextInt(5)+5;
         String id="";
         for (int i = 0; i < n + 1; i++) {
             id+=(char)(r.nextInt(25)+97)+"";
@@ -69,7 +69,7 @@ public class Trial {
         if(createdIds.size()>=1){
         	
         	String value=createdIds.remove(r.nextInt(createdIds.size()));
-            elastic.deleteDocument(types[r.nextInt(1)],value);
+            elastic.delete(types[r.nextInt(1)],value);
 
         }
 

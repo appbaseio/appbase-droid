@@ -22,6 +22,7 @@ public class Main {
 				System.out.println(data);
 			}
 		} );
+		System.out.println("done updating");
 		
 
 	}
