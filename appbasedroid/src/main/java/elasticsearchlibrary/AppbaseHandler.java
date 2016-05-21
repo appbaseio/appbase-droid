@@ -9,6 +9,7 @@ import org.asynchttpclient.HttpResponseHeaders;
 import org.asynchttpclient.HttpResponseStatus;
 
 import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -19,10 +20,15 @@ import com.google.gson.JsonParser;
 public abstract class AppbaseHandler implements AsyncHandler<String> {
 	private boolean getResult;
 	JsonArray jsonArray;
-
+	String halfBody = "";
+	JsonParser jsParser ;
+	public boolean getResult(){
+		return getResult;
+	}
 	public AppbaseHandler(boolean getResult) {
 		this.getResult = getResult;
 		jsonArray = new JsonArray();
+		jsParser = new JsonParser();
 	}
 
 	public State onStatusReceived(HttpResponseStatus arg0) throws Exception {
@@ -40,27 +46,25 @@ public abstract class AppbaseHandler implements AsyncHandler<String> {
 		if (getResult)
 			return jsonArray.toString();
 		else
-			return null;
+			return "nothing was to be returned";
 	}
 
 	public State onBodyPartReceived(HttpResponseBodyPart bodyPart)
 			throws Exception {
-		ByteArrayOutputStream localBytes = new ByteArrayOutputStream();
-		try {
-			localBytes.write(bodyPart.getBodyPartBytes());
-		} catch (IOException e) {
-			e.printStackTrace();
+
+		halfBody += new String(bodyPart.getBodyPartBytes());
+		JsonObject object;
+		try{
+			JsonElement element = jsParser.parse(halfBody);
+			object=element.getAsJsonObject();
+			if(getResult){
+				jsonArray.add(object);
+			}
+			halfBody="";
+			onData(object.toString());
+		}catch(Exception e){
+			
 		}
-		if (getResult) {
-			JsonParser parser = new JsonParser();
-
-			JsonObject object = parser.parse(localBytes.toString())
-					.getAsJsonObject();
-			jsonArray.add(object);
-		}
-
-		onData(localBytes.toString());
-
 		return State.CONTINUE;
 	}
 

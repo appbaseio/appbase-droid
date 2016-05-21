@@ -9,6 +9,7 @@ import org.asynchttpclient.Request;
 import org.asynchttpclient.RequestBuilder;
 import org.asynchttpclient.Response;
 import org.asynchttpclient.util.Base64;
+
 import elasticsearchlibrary.BulkRequestObject;
 
 import java.util.ArrayList;
@@ -234,28 +235,29 @@ public class Appbase {
 				.addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).addQueryParams(parameters)
 				.execute(asyncHandler);
-		try {
-			System.out.println(f.get());
-		} catch (InterruptedException | ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
 
 	}
 
-	public void searchStream(String type, String body,
+	public String searchStream(String type, String body,
 			AsyncHandler<String> asyncHandler) {
-		System.out.println(getURL(type) + "_search");
 		ListenableFuture<String> f = httpClient
-				.preparePost(getURL(type) + "_search")
-				.addHeader("Authorization", "Basic " + getAuth()).setBody(body)
-				.addQueryParams(parameters).execute(asyncHandler);
+				.prepareGet(getURL(type) + "_search")
+				.setRequestTimeout(60000000)
+				.addHeader("Authorization", "Basic " + getAuth())
+				.setBody(body)
+				.addQueryParams(parameters)
+				.execute(asyncHandler);
 		try {
-			System.out.println(f.get());
-		} catch (InterruptedException | ExecutionException e) {
+			return f.get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
+
 	}
 
 	public void searchStreamToURL() {
