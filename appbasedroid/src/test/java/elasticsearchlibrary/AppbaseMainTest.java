@@ -25,9 +25,19 @@ public class AppbaseMainTest {
 			URL = "http://scalr.api.appbase.io",
 			appName = "jsfiddle-demo",
 			jsonDoc = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
-	Random r = new Random();
+	static Random r = new Random();
 	String type = "product", id = "1";
-
+	public static String generateId(){
+        if(r==null){
+            r=new Random();
+        }
+        int n=r.nextInt(5)+5;
+        String id="";
+        for (int i = 0; i < n + 1; i++) {
+            id+=(char)(r.nextInt(25)+97)+"";
+        }
+        return id;
+    }
 	@BeforeClass
 	public static void setup() {
 		/**
@@ -39,7 +49,7 @@ public class AppbaseMainTest {
 		 */
 
 		appbase = new Appbase(URL, appName, user, pass);
-		randomId = Trial.generateId();
+		randomId = generateId();
 		parser = new JsonParser();
 	}
 
@@ -202,7 +212,7 @@ public class AppbaseMainTest {
 					public void onData(String data) {
 						if (i == 1) {
 							i++;
-							generatedId = Trial.generateId();
+							generatedId = generateId();
 							appbase.index(type, generatedId, jsonDoc);
 
 						} else {
