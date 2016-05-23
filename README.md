@@ -12,11 +12,11 @@ Currently you can clone the project on your local PC and run it on eclipse.
 **Setup**
 To start using this library you need to first initialize a Appbase() instance
 ```java
-  String user = "7eJWHfD4P",
-			pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
-			URL = "http://scalr.api.appbase.io",
-			appName = "jsfiddle-demo";
-	Appbase appbase = new Appbase(URL, appName, user, pass);
+String user = "7eJWHfD4P",
+       pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
+       URL = "http://scalr.api.appbase.io",
+       appName = "jsfiddle-demo";
+Appbase appbase = new Appbase(URL, appName, user, pass);
 
 ```
 
@@ -65,7 +65,7 @@ String result = appbase.getTypes();
 appbase.getStream(type, randomId, new AppbaseHandler(false) {
 	@Override
 	public void onData(String data) {
-    System.out.println(data);
+    		System.out.println(data);
 	}
 });
 ```
@@ -78,18 +78,19 @@ appbase.searchStream(type,
 		String generatedId;
 		@Override
 		public void onData(String data) {
-      System.out.println(data);
+			System.out.println(data);
 		}
-});
+	}
+);
 ```
 
-**Get as Json**
-To get any result as Json use
-To get the result as JsonObject use
+**Get as JSON**
+To get any result as JsonObject use
 ```java
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-JsonParser	parser = new JsonParser();
+
+JsonParser parser = new JsonParser();
 JsonObject object = parser.parse(result).getAsJsonObject();
 ```
 
