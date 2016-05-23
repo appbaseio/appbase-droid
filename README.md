@@ -6,6 +6,7 @@ Appbase.io library for Java / Android
 
 ##Installation
 Currently you can clone the project on your local PC and run it on eclipse.
+To install maven dependencies run raven install on eclipse.
 
 ##Usage
 
@@ -35,6 +36,8 @@ String result = appbase.update(type, randomId, null, jsonDoc);
 String result = appbase.delete(type, randomId);
 ```
 **Bulk**
+If an integer other than the INDEX ,UPDATE or DELETE is entered, it will try to index.
+
 ```java
 BulkRequestObject[] bulk = new BulkRequestObject[4];
 bulk[0] = new BulkRequestObject(type, randomId,
