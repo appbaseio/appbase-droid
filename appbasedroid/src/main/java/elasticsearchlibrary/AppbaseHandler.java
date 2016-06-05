@@ -1,7 +1,5 @@
 package elasticsearchlibrary;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
 
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.HttpResponseBodyPart;
@@ -71,7 +69,7 @@ public abstract class AppbaseHandler implements AsyncHandler<String> {
 	public abstract void onData(String data);
 
 	public void onThrowable(Throwable arg0) {
-
+		System.out.println(arg0);
 	}
 
 	public void encodeToJsonObject(String data) {

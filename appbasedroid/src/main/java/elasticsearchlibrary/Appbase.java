@@ -10,10 +10,15 @@ import org.asynchttpclient.RequestBuilder;
 import org.asynchttpclient.Response;
 import org.asynchttpclient.util.Base64;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+
 import elasticsearchlibrary.BulkRequestObject;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 /**
@@ -60,7 +65,7 @@ public class Appbase {
 		constructURL();
 		httpClient = new DefaultAsyncHttpClient();
 		Param stream = new Param("streamonly", "true");
-		parameters.add(stream);
+		getParameters().add(stream);
 
 	}
 
@@ -187,17 +192,33 @@ public class Appbase {
 	public String index(String type, String id, String jsonDoc) {
 
 		RequestBuilder builder = new RequestBuilder("PUT");
-		Request request = builder.setUrl(getURL(type, id))
-				.addHeader("Authorization", "Basic " + getAuth())
+		Request request = builder.setUrl(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth())
 				.setBody(jsonDoc).build();
 		ListenableFuture<Response> f = httpClient.executeRequest(request);
 		try {
 			Response r = f.get();
 			return r.getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
+	}
+
+	public String index(String type, String id, byte[] jsonDoc) {
+		return index(type, id, new String(jsonDoc));
+	}
+
+	public String index(String type, String id, JsonObject jsonDoc) {
+		return index(type, id, jsonDoc.getAsString());
+	}
+
+	public String index(String type, String id, Map<String, Object> jsonDoc) {
+		Gson gson = new GsonBuilder().create();
+		String json = gson.toJson(jsonDoc);
+		return index(type, id, json);
 	}
 
 	/**
@@ -218,21 +239,35 @@ public class Appbase {
 	 *         operations execution.
 	 */
 
-	public String update(String type, String id, List<Param> parameters,
-			String jsonDoc) {
+	public String update(String type, String id, List<Param> parameters, String jsonDoc) {
 		RequestBuilder builder = new RequestBuilder("POST");
-		Request request = builder
-				.setUrl(getURL(type, id) + SEPARATOR + "_update")
-				.addHeader("Authorization", "Basic " + getAuth())
-				.addQueryParams(parameters).setBody(jsonDoc).build();
+		Request request = builder.setUrl(getURL(type, id) + SEPARATOR + "_update")
+				.addHeader("Authorization", "Basic " + getAuth()).addQueryParams(parameters).setBody(jsonDoc).build();
 		ListenableFuture<Response> f = httpClient.executeRequest(request);
 		try {
 			Response r = f.get();
 			return r.getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public String update(String type, String id, List<Param> parameters, JsonObject jsonDoc) {
+		return update(type, id, parameters, jsonDoc.getAsString());
+	}
+
+	public String update(String type, String id, List<Param> parameters, Map<String, Object> jsonDoc) {
+		Gson gson = new GsonBuilder().create();
+		String json = gson.toJson(jsonDoc);
+		return update(type, id, parameters, json);
+	}
+
+	public String update(String type, String id, List<Param> parameters, byte[] jsonDoc) {
+		return update(type, id, parameters, new String(jsonDoc));
 	}
 
 	/**
@@ -246,13 +281,15 @@ public class Appbase {
 	 *         operations execution.
 	 */
 	public String delete(String type, String id) {
-		ListenableFuture<Response> f = httpClient
-				.prepareDelete(getURL(type, id))
+		ListenableFuture<Response> f = httpClient.prepareDelete(getURL(type, id))
 				.addHeader("Authorization", "Basic " + getAuth()).execute();
 		try {
 			Response r = f.get();
 			return r.getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
@@ -275,19 +312,16 @@ public class Appbase {
 			if (objects[i] != null) {
 				switch (objects[i].getMethod()) {
 				case 0:
-					abc.add(index(objects[i].type, objects[i].getId(),
-							objects[i].getJsonDoc()));
+					abc.add(index(objects[i].type, objects[i].getId(), objects[i].getJsonDoc()));
 					break;
 				case 1:
 					abc.add(delete(objects[i].type, objects[i].getId()));
 					break;
 				case 2:
-					abc.add(update(objects[i].type, objects[i].getId(), null,
-							objects[i].getJsonDoc()));
+					abc.add(update(objects[i].type, objects[i].getId(), null, objects[i].getJsonDoc()));
 					break;
 				default:
-					abc.add(index(objects[i].type, objects[i].getId(),
-							objects[i].getJsonDoc()));
+					abc.add(index(objects[i].type, objects[i].getId(), objects[i].getJsonDoc()));
 					break;
 				}
 			}
@@ -312,11 +346,14 @@ public class Appbase {
 				.addHeader("Authorization", "Basic " + getAuth()).execute();
 		try {
 			return f.get().getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	/**
@@ -325,16 +362,18 @@ public class Appbase {
 	 * @return returns the json document as String of the mappings
 	 */
 	public String getTypes() {
-		ListenableFuture<Response> f = httpClient
-				.prepareGet(this.URL + SEPARATOR + "_mapping")
+		ListenableFuture<Response> f = httpClient.prepareGet(this.URL + SEPARATOR + "_mapping")
 				.addHeader("Authorization", "Basic " + getAuth()).execute();
 		try {
 			return f.get().getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return null;
 	}
 
 	/**
@@ -347,76 +386,85 @@ public class Appbase {
 	 * @return returns the search result corresponding to the query
 	 */
 	public String search(String type, String body) {
-		ListenableFuture<Response> f = httpClient
-				.preparePost(getURL(type) + SEPARATOR + "_search")
-				.addHeader("Authorization", "Basic " + getAuth()).setBody(body)
-				.execute();
+		ListenableFuture<Response> f = httpClient.preparePost(getURL(type) + SEPARATOR + "_search")
+				.addHeader("Authorization", "Basic " + getAuth()).setBody(body).execute();
 		try {
 			return f.get().getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		return null;
 	}
 
-	
 	/**
 	 * 
-	 * @param type type in which search must be done
-	 * @param parameters parameters for searching
+	 * @param type
+	 *            type in which search must be done
+	 * @param parameters
+	 *            parameters for searching
 	 * @return
 	 */
-	public String searchUsingParameters(String type,
-			java.util.List<Param> parameters) {
-		ListenableFuture<Response> f = httpClient
-				.preparePost(getURL(type) + SEPARATOR + "_search")
-				.addHeader("Authorization", "Basic " + getAuth())
-				.addQueryParams(parameters)
-				.execute();
+	public String searchUsingParameters(String type, java.util.List<Param> parameters) {
+		ListenableFuture<Response> f = httpClient.preparePost(getURL(type) + SEPARATOR + "_search")
+				.addHeader("Authorization", "Basic " + getAuth()).addQueryParams(parameters).execute();
 		try {
 			return f.get().getResponseBody();
-		} catch (InterruptedException | ExecutionException e) {
+		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			return null;
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
+		return null;
+
 	}
 
 	/**
-	 * Get the stream for a indexed object.
-	 * If any changes happen, the user can state what to happen by overriding the onData method or overriding the onBodyPartRecieved.
+	 * Get the stream for a indexed object. If any changes happen, the user can
+	 * state what to happen by overriding the onData method or overriding the
+	 * onBodyPartRecieved.
 	 * 
-	 * @param type type of the object
-	 * @param id id of the object
-	 * @param asyncHandler a async handler object. 
-	 * It is preferable to pass a Appbase Handler object as single body may come as multiple body parts which need to be managed which is implemented by Appbase Handler.
+	 * @param type
+	 *            type of the object
+	 * @param id
+	 *            id of the object
+	 * @param asyncHandler
+	 *            a async handler object. It is preferable to pass a Appbase
+	 *            Handler object as single body may come as multiple body parts
+	 *            which need to be managed which is implemented by Appbase
+	 *            Handler.
 	 */
-	public void getStream(String type, String id,
-			AsyncHandler<String> asyncHandler) {
+	public void getStream(String type, String id, AsyncHandler<String> asyncHandler) {
 		ListenableFuture<String> f = httpClient.prepareGet(getURL(type, id))
-				.addHeader("Authorization", "Basic " + getAuth())
-				.setRequestTimeout(60000000).addQueryParams(parameters)
-				.execute(asyncHandler);
+				.addHeader("Authorization", "Basic " + getAuth()).setRequestTimeout(60000000)
+				.addQueryParams(getParameters()).execute(asyncHandler);
 
 	}
+
 	/**
-	 * Get the search stream for a indexed object.
-	 * If any changes happen and the changes contain some part of the query, the user can state what to happen by overriding the onData() method or the onBodyPartRecieved() method.
+	 * Get the search stream for a indexed object. If any changes happen and the
+	 * changes contain some part of the query, the user can state what to happen
+	 * by overriding the onData() method or the onBodyPartRecieved() method.
 	 * 
-	 * @param type type of the object
-	 * @param id id of the object
-	 * @param asyncHandler a async handler object. 
-	 * It is preferable to pass a Appbase Handler object as single body may come as multiple body parts which need to be managed which is implemented by Appbase Handler.
+	 * @param type
+	 *            type of the object
+	 * @param id
+	 *            id of the object
+	 * @param asyncHandler
+	 *            a async handler object. It is preferable to pass a Appbase
+	 *            Handler object as single body may come as multiple body parts
+	 *            which need to be managed which is implemented by Appbase
+	 *            Handler.
 	 */
-	public String searchStream(String type, String body,
-			AsyncHandler<String> asyncHandler) {
-		ListenableFuture<String> f = httpClient
-				.prepareGet(getURL(type) + SEPARATOR + "_search")
-				.setRequestTimeout(60000000)
-				.addHeader("Authorization", "Basic " + getAuth()).setBody(body)
-				.addQueryParams(parameters).execute(asyncHandler);
+	public String searchStream(String type, String body, AsyncHandler<String> asyncHandler) {
+		ListenableFuture<String> f = httpClient.prepareGet(getURL(type) + SEPARATOR + "_search")
+				.setRequestTimeout(60000000).addHeader("Authorization", "Basic " + getAuth()).setBody(body)
+				.addQueryParams(getParameters()).execute(asyncHandler);
 		try {
 			return f.get();
 		} catch (InterruptedException e) {
@@ -436,36 +484,62 @@ public class Appbase {
 
 	// Search Document
 	public void searchDocument(String type, String id) {
-		httpClient.prepareGet(getURL(type, id))
-				.addHeader("Authorization", "Basic " + getAuth()).execute();
+		httpClient.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth()).execute();
 
 	}
 
 	/**
-	 * Search by term 
-	 * @param term term to be searched
+	 * Search by term
+	 * 
+	 * @param term
+	 *            term to be searched
 	 */
 	public void searchUri(String term) {
 
-		httpClient.prepareGet(getSearchUrl(term))
-				.addHeader("Authorization", "Basic " + getAuth()).execute();
+		httpClient.prepareGet(getSearchUrl(term)).addHeader("Authorization", "Basic " + getAuth()).execute();
 
 	}
 
 	// Extremely doubtful.
-	
+
 	/**
-	 * Index a document without providing the id. Id will be automatically created.
+	 * Index a document without providing the id. Id will be automatically
+	 * created.
 	 * 
-	 * @param type type of the object
-	 * @param jsonDoc the objectto be indexed
+	 * @param type
+	 *            type of the object
+	 * @param jsonDoc
+	 *            the object to be indexed
 	 */
 	public void indexAutoId(String type, String jsonDoc) {
 		RequestBuilder builder = new RequestBuilder("PUT");
-		Request request = builder.setUrl(getURL(type))
-				.addHeader("Authorization", "Basic " + getAuth())
-				.setBody(jsonDoc).build();
+		Request request = builder.setUrl(getURL(type)).addHeader("Authorization", "Basic " + getAuth()).setBody(jsonDoc)
+				.build();
 		httpClient.executeRequest(request);
+	}
+
+	public ArrayList<Param> getParameters() {
+		return parameters;
+	}
+
+	public void setParameters(ArrayList<Param> parameters) {
+		this.parameters = parameters;
+	}
+
+	public void getStreamThread(String type, String id, AsyncHandler<String> asyncHandler) {
+		GetRunnable getRunnable = new GetRunnable(type, id, asyncHandler, httpClient, this);
+		Thread thread = new Thread(getRunnable);
+		System.out.println("started the thread");
+		thread.start();
+
+		try {
+			thread.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("returning from get");
+
 	}
 }
 

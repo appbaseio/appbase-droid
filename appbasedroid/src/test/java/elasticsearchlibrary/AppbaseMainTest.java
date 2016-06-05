@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import java.util.Random;
 
 import org.asynchttpclient.HttpResponseBodyPart;
+import org.asynchttpclient.HttpResponseHeaders;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -165,11 +166,16 @@ public class AppbaseMainTest {
 	}
 	
 	@Test
-	public void HgetStreamTest() {
+	public void AHgetStreamTest() {
 		appbase.index(type, randomId, jsonDoc);
 		appbase.getStream(type, randomId, new AppbaseHandler(false) {
 			int i = 1;
-
+			@Override
+			public org.asynchttpclient.AsyncHandler.State onHeadersReceived(HttpResponseHeaders arg0) throws Exception {
+				// TODO Auto-generated method stub
+				System.out.println(arg0.getHeaders());
+				return super.onHeadersReceived(arg0);
+			}
 			@Override
 			public void onData(String data) {
 				// TODO Auto-generated method stub
@@ -186,7 +192,7 @@ public class AppbaseMainTest {
 				} else if (i > 1) {
 					String result = new String(bodyPart.getBodyPartBytes());
 					JsonObject object = parser.parse(result).getAsJsonObject();
-
+					System.out.println(result);
 					assertEquals(object.getAsJsonObject("_source").get("price")
 							.getAsInt(), 2);
 					return State.ABORT;
@@ -197,6 +203,7 @@ public class AppbaseMainTest {
 			}
 		});
 
+		System.out.println("abc");
 	}
 
 
