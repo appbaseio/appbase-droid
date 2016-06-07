@@ -7,7 +7,7 @@ import org.junit.Test;
 
 public class AppbaseBasicTest {
 
-	Appbase appbase;
+	AppbaseClient appbase;
 	static final String user = "vspynv5Dg",
 			pass = "f54091f5-ff77-4c71-a14c-1c29ab93fd15",
 			URL = "http://scalr.api.appbase.io", appName = "Trial1796";
@@ -15,7 +15,7 @@ public class AppbaseBasicTest {
 
 	@Before
 	public void setup() {
-		appbase = new Appbase(URL,appName,user,pass);
+		appbase = new AppbaseClient(URL,appName,user,pass);
 	}
 
 	@Test

@@ -14,13 +14,12 @@ import org.junit.runners.MethodSorters;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
-import elasticsearchlibrary.BulkRequestObject;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class AppbaseMainTest {
 	static JsonParser parser;
 	static String randomId = null;
-	static Appbase appbase;
+	static AppbaseClient appbase;
 	static final String user = "7eJWHfD4P",
 			pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
 			URL = "http://scalr.api.appbase.io",
@@ -49,7 +48,7 @@ public class AppbaseMainTest {
 		 * 431d9cea-5219-4dfb-b798-f897f3a02665 )
 		 */
 
-		appbase = new Appbase(URL, appName, user, pass);
+		appbase = new AppbaseClient(URL, appName, user, pass);
 		randomId = generateId();
 		parser = new JsonParser();
 	}
@@ -118,20 +117,6 @@ public class AppbaseMainTest {
 		assertEquals(object.get("found").getAsBoolean(), false);
 		assertEquals(
 				object.getAsJsonObject("_shards").get("failed").getAsInt(), 0);
-	}
-
-	@Test
-	public void DbulkTest() {
-		BulkRequestObject[] bulk = new BulkRequestObject[4];
-		bulk[0] = new BulkRequestObject(type, randomId,
-				BulkRequestObject.INDEX, jsonDoc);
-		bulk[1] = new BulkRequestObject(type, randomId,
-				BulkRequestObject.UPDATE, "{doc: {\"price\": " + 6 + "}}");
-		bulk[2] = new BulkRequestObject(type, randomId,
-				BulkRequestObject.DELETE, null);
-		bulk[3] = new BulkRequestObject(type, randomId, 100, jsonDoc);
-
-		appbase.bulk(bulk);
 	}
 
 	@Test
