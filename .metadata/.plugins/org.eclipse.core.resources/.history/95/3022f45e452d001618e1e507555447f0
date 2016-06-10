@@ -1,0 +1,13 @@
+package elasticsearchlibrary;
+
+import org.asynchttpclient.Response;
+
+import com.google.gson.JsonObject;
+
+public abstract class AppbaseResponse implements Response{
+	public JsonObject getResponseBodyAsJsonObject(){
+	
+		return null;
+	};
+
+}

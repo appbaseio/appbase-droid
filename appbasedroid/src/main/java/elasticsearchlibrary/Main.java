@@ -1,5 +1,6 @@
 package elasticsearchlibrary;
 
+import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
 /**
@@ -8,7 +9,7 @@ import com.google.gson.JsonParser;
 
 public class Main {
 	static JsonParser parser;
-	static Appbase appbase;
+	static AppbaseClient appbase;
 	static final String user = "7eJWHfD4P",
 			pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
 			URL = "http://scalr.api.appbase.io",
@@ -19,19 +20,15 @@ public class Main {
 	public static void main(String[] args) {
 		String URL="http://scalr.api.appbase.io", app="Trial1796",
 				  user="vspynv5Dg", pass="f54091f5-ff77-4c71-a14c-1c29ab93fd15";
-		appbase = new Appbase(URL, app, user, pass);
-		System.out.println("starting execution");
-		appbase.getStream(type, id, new AppbaseHandler(false) {
-			
+		appbase = new AppbaseClient(URL, app, user, pass);
+		appbase.getStream(type, id, new AppbaseHandler<JsonObject>(JsonObject.class) {
 			@Override
-			public void onData(String data) {
+			public void onData(JsonObject data) {
 				System.out.println(data);
 			}
-		});
-		System.out.println("ending execution");
-		
-		
-		
 
+		});
+		System.out.println("out of async");
+		
 	}
 }

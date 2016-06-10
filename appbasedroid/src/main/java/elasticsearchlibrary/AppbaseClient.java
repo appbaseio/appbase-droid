@@ -1,11 +1,13 @@
 package elasticsearchlibrary;
 
+import java.io.IOException;
+import java.io.PipedInputStream;
+import java.io.PipedOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
-import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.BoundRequestBuilder;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.ListenableFuture;
@@ -56,7 +58,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		this.userName = userName;
 		this.app = app;
 		constructURL();
-		Param stream = new Param("streamonly", "true");
+		Param stream = new Param("stream", "true");
 		getParameters().add(stream);
 
 	}
@@ -156,6 +158,18 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		return Base64.encode(Auth.getBytes());
 	}
 
+	public ArrayList<Param> getParameters() {
+		return parameters;
+	}
+
+	public void addDefaultParameters(ArrayList<Param> parameters) {
+		this.parameters.addAll(parameters);
+	}
+
+	public void addDefaultParameter(Param parameter) {
+		this.parameters.add(parameter);
+	}
+
 	// Main library methods
 
 	// index()
@@ -207,14 +221,17 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		String json = gson.toJson(jsonDoc);
 		return index(type, id, json);
 	}
-	
-	
+
 	/**
+	 * To prepare the index. To have control on when it is executed or to add parameters or queries
 	 * 
 	 * @param type
+	 *            the type of the object
 	 * @param id
+	 *            the id at which it need to be inserted
 	 * @param jsonDoc
-	 * @return
+	 *            the String which is the JSON for the object to be inserted
+	 * @return returns the BuundRequestBuilder object which can be executed
 	 */
 
 	public BoundRequestBuilder prepareIndex(String type, String id, String jsonDoc) {
@@ -270,7 +287,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	public String update(String type, String id, List<Param> parameters, byte[] jsonDoc) {
 		return update(type, id, parameters, new String(jsonDoc));
 	}
-	
+
 	public String update(String type, String id, List<Param> parameters, JsonObject jsonDoc) {
 		return update(type, id, parameters, jsonDoc.getAsString());
 	}
@@ -285,18 +302,22 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		return super.preparePost(getURL(type, id) + SEPARATOR + "_update")
 				.addHeader("Authorization", "Basic " + getAuth()).addQueryParams(parameters).setBody(jsonDoc);
 	}
+
 	public BoundRequestBuilder prepareUpdate(String type, String id, List<Param> parameters, byte[] jsonDoc) {
 		return prepareUpdate(type, id, parameters, new String(jsonDoc));
 	}
+
 	public BoundRequestBuilder prepareUpdate(String type, String id, List<Param> parameters, JsonObject jsonDoc) {
 		return prepareUpdate(type, id, parameters, jsonDoc.getAsString());
 
 	}
-	public BoundRequestBuilder prepareUpdate(String type, String id, List<Param> parameters, Map<String, Object> jsonDoc) {
+
+	public BoundRequestBuilder prepareUpdate(String type, String id, List<Param> parameters,
+			Map<String, Object> jsonDoc) {
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(jsonDoc);
 		return prepareUpdate(type, id, parameters, json);
-		
+
 	}
 
 	/**
@@ -327,15 +348,15 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		return super.prepareDelete(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth());
 	}
 
-	public ArrayList<ListenableFuture<Response>> bulkExecute(BoundRequestBuilder[] requestBuilders){
+	public ArrayList<ListenableFuture<Response>> bulkExecute(BoundRequestBuilder[] requestBuilders) {
 		ArrayList<ListenableFuture<Response>> response = new ArrayList<ListenableFuture<Response>>();
 		for (int i = 0; i < requestBuilders.length; i++) {
 			response.add(requestBuilders[i].execute());
 		}
 		return response;
 	}
-	
-	public ArrayList<ListenableFuture<Response>> bulkExecute(ArrayList<BoundRequestBuilder> requestList){
+
+	public ArrayList<ListenableFuture<Response>> bulkExecute(ArrayList<BoundRequestBuilder> requestList) {
 		ArrayList<ListenableFuture<Response>> response = new ArrayList<ListenableFuture<Response>>();
 		for (int i = 0; i < requestList.size(); i++) {
 			response.add(requestList.get(i).execute());
@@ -461,7 +482,8 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            which need to be managed which is implemented by Appbase
 	 *            Handler.
 	 */
-	public void getStream(String type, String id, AsyncHandler<String> asyncHandler) {
+	@SuppressWarnings("unchecked")
+	public void getStream(String type, String id, AppbaseHandler asyncHandler) {
 		super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth()).setRequestTimeout(60000000)
 				.addQueryParams(getParameters()).execute(asyncHandler);
 	}
@@ -469,6 +491,17 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	public BoundRequestBuilder prepareGetStream(String type, String id) {
 		return super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).addQueryParams(getParameters());
+	}
+	
+	public PipedInputStream getPipedStream(String type, String id) throws IOException{
+        PipedOutputStream output = new PipedOutputStream();
+        
+        final PipedInputStream input = new PipedInputStream(output);
+        
+        AppbaseStreamHandler handler=new AppbaseStreamHandler(output);
+		super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth()).setRequestTimeout(60000000)
+		.addQueryParams(getParameters()).execute(handler);
+		return input;
 	}
 
 	/**
@@ -480,24 +513,19 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            type of the object
 	 * @param id
 	 *            id of the object
-	 * @param asyncHandler
+	 * @param appbaseHandlerSaveStream
 	 *            a async handler object. It is preferable to pass a Appbase
 	 *            Handler object as single body may come as multiple body parts
 	 *            which need to be managed which is implemented by Appbase
 	 *            Handler.
 	 */
-	public String searchStream(String type, String body, AsyncHandler<String> asyncHandler) {
-		ListenableFuture<String> f = super.prepareGet(getURL(type) + SEPARATOR + "_search").setRequestTimeout(60000000)
-				.addHeader("Authorization", "Basic " + getAuth()).setBody(body).addQueryParams(getParameters())
+	@SuppressWarnings("unchecked")
+	public void searchStream(String type, String body, AppbaseHandler asyncHandler) {
+		super.prepareGet(getURL(type) + SEPARATOR + "_search")
+				.addHeader("Authorization", "Basic " + getAuth())
+				.setRequestTimeout(60000000)
+				.setBody(body).addQueryParams(getParameters())
 				.execute(asyncHandler);
-		try {
-			return f.get();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
 
 	}
 
@@ -544,18 +572,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		Request request = builder.setUrl(getURL(type)).addHeader("Authorization", "Basic " + getAuth()).setBody(jsonDoc)
 				.build();
 		super.executeRequest(request);
-	}
-
-	public ArrayList<Param> getParameters() {
-		return parameters;
-	}
-
-	public void addDefaultParameters(ArrayList<Param> parameters) {
-		this.parameters.addAll(parameters);
-	}
-
-	public void addDefaultParameter(Param parameter) {
-		this.parameters.add(parameter);
 	}
 
 	// public void getStreamThread(String type, String id, AsyncHandler<String>

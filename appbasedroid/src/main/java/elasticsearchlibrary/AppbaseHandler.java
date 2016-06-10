@@ -1,11 +1,15 @@
 package elasticsearchlibrary;
 
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.HttpResponseBodyPart;
 import org.asynchttpclient.HttpResponseHeaders;
 import org.asynchttpclient.HttpResponseStatus;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -15,18 +19,16 @@ import com.google.gson.JsonParser;
  * Created by Tirth Shah on 14-05-2016.
  */
 
-public abstract class AppbaseHandler implements AsyncHandler<String> {
-	private boolean getResult;
+public abstract class AppbaseHandler<T> implements AsyncHandler<T> {
 	JsonArray jsonArray;
 	String halfBody = "";
-	JsonParser jsParser ;
-	public boolean getResult(){
-		return getResult;
-	}
-	public AppbaseHandler(boolean getResult) {
-		this.getResult = getResult;
+	JsonParser jsParser;
+	private Class<T> type;
+
+	public AppbaseHandler(Class<T> type) {
 		jsonArray = new JsonArray();
 		jsParser = new JsonParser();
+		this.type = type;
 	}
 
 	public State onStatusReceived(HttpResponseStatus arg0) throws Exception {
@@ -40,36 +42,42 @@ public abstract class AppbaseHandler implements AsyncHandler<String> {
 		return State.CONTINUE;
 	}
 
-	public String onCompleted() throws Exception {
-		if (getResult)
-			return jsonArray.toString();
-		else
-			return "nothing was to be returned";
+	public T onCompleted() throws Exception {
+		return null;
 	}
 
-	public State onBodyPartReceived(HttpResponseBodyPart bodyPart)
-			throws Exception {
-
+	@SuppressWarnings("unchecked")
+	public State onBodyPartReceived(HttpResponseBodyPart bodyPart) throws Exception {
 		halfBody += new String(bodyPart.getBodyPartBytes());
 		JsonObject object;
-		try{
+		System.out.println(halfBody);
+		try {
 			JsonElement element = jsParser.parse(halfBody);
-			object=element.getAsJsonObject();
-			if(getResult){
-				jsonArray.add(object);
+			object = element.getAsJsonObject();
+			halfBody = "";
+			Gson gson = new Gson();
+			object=formatResponse(object);
+			if (type == String.class) {
+				onData((T) object.toString());
+			} else if (type == JsonElement.class || JsonElement.class.isAssignableFrom(type)) {
+				onData((T) object);
+			} else {
+				System.out.println("on data");
+				T newReceived = gson.fromJson(object, type);
+				System.out.println(newReceived + " hgvc");
+				onData(newReceived);
 			}
-			halfBody="";
-			onData(object.toString());
-		}catch(Exception e){
-			
+
+		} catch (Exception e) {
+
 		}
 		return State.CONTINUE;
 	}
 
-	public abstract void onData(String data);
+	public abstract void onData(T data);
 
 	public void onThrowable(Throwable arg0) {
-		System.out.println(arg0);
+		
 	}
 
 	public void encodeToJsonObject(String data) {
@@ -77,6 +85,19 @@ public abstract class AppbaseHandler implements AsyncHandler<String> {
 	}
 
 	public void decodeFromJsonObject() {
+
+	}
+
+	public JsonObject formatResponse(JsonObject response) {
+		JsonObject formatted = new JsonObject();
+		formatted = response.remove("_source").getAsJsonObject();
+		Set<Entry<String, JsonElement>> entrySet = response.entrySet();
+		for (Map.Entry<String, JsonElement> entry : entrySet) {
+			if (entry.getKey().startsWith("_")) {
+				formatted.add(entry.getKey(), entry.getValue());
+			}
+		}
+		return formatted;
 	}
 
 }

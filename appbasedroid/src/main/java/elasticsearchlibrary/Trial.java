@@ -9,9 +9,9 @@ import java.util.Random;
 
 
 public class Trial {
-    Appbase elastic;
+    AppbaseClient elastic;
 
-    public Trial(Appbase elastic) {
+    public Trial(AppbaseClient elastic) {
         this.elastic = elastic;
     }
 

@@ -6,6 +6,7 @@ public class QueryBuilder {
 	private JsonObject queryObject;
 	public QueryBuilder() {
 		queryObject=new JsonObject();
+		System.out.println(queryObject);
 	}
 	
 }

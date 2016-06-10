@@ -4,7 +4,6 @@ import java.util.concurrent.ExecutionException;
 
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.AsyncHttpClient;
-import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.ListenableFuture;
 
 public class GetRunnable implements Runnable{
@@ -12,8 +11,8 @@ public class GetRunnable implements Runnable{
 	String id;
 	AsyncHandler<String> asyncHandler;
 	AsyncHttpClient httpClient;
-	private Appbase appbase;
-	public GetRunnable(String type, String id, AsyncHandler<String> asyncHandler,AsyncHttpClient httpClient,Appbase appbase) {
+	private AppbaseClient appbase;
+	public GetRunnable(String type, String id, AsyncHandler<String> asyncHandler,AsyncHttpClient httpClient,AppbaseClient appbase) {
 		super();
 		this.type = type;
 		this.id = id;
@@ -37,9 +36,5 @@ public class GetRunnable implements Runnable{
 			e.printStackTrace();
 		};
 		System.out.println("returning from run");
-		
-	
 	}
-	
-	
 }
