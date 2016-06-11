@@ -13,10 +13,10 @@
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="org.omg.PortableInterceptor.ObjectReferenceFactory"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="elasticsearchlibrary.AppbaseClient"/>
 <fullyQualifiedTypeName name="org.asynchttpclient.AsyncHandler"/>
 <fullyQualifiedTypeName name="org.asynchttpclient.DefaultAsyncHttpClient"/>
 <fullyQualifiedTypeName name="elasticsearchlibrary.AppbaseHandler"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonElement"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
+<fullyQualifiedTypeName name="elasticsearchlibrary.AppbaseClient"/>
 </qualifiedTypeNameHistroy>

@@ -12,14 +12,16 @@ import org.asynchttpclient.BoundRequestBuilder;
 import org.asynchttpclient.DefaultAsyncHttpClient;
 import org.asynchttpclient.ListenableFuture;
 import org.asynchttpclient.Param;
-import org.asynchttpclient.Request;
-import org.asynchttpclient.RequestBuilder;
 import org.asynchttpclient.Response;
 import org.asynchttpclient.util.Base64;
+import org.elasticsearch.index.query.QueryBuilder;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
+
+import elasticsearchlibrary.handlers.AppbaseStreamHandler;
+import elasticsearchlibrary.handlers.AppbasePipedStreamHandler;
 
 public class AppbaseClient extends DefaultAsyncHttpClient {
 
@@ -223,7 +225,40 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	/**
-	 * To prepare the index. To have control on when it is executed or to add parameters or queries
+	 * Index a document without providing the id. Id will be automatically
+	 * created.
+	 * 
+	 * @param type
+	 *            type of the object
+	 * @param jsonDoc
+	 *            the object to be indexed
+	 * @return
+	 */
+	public ListenableFuture<Response> index(String type, String jsonDoc) {
+		return prepareIndex(type, jsonDoc).execute();
+	}
+
+	private BoundRequestBuilder prepareIndex(String type, String jsonDoc) {
+		return super.preparePut(getURL(type)).addHeader("Authorization", "Basic " + getAuth()).setBody(jsonDoc);
+	}
+
+	public BoundRequestBuilder prepareIndex(String type, byte[] jsonDoc) {
+		return prepareIndex(type, new String(jsonDoc));
+	}
+
+	public BoundRequestBuilder prepareIndex(String type, JsonObject jsonDoc) {
+		return prepareIndex(type, jsonDoc.getAsString());
+	}
+
+	public BoundRequestBuilder prepareIndex(String type, Map<String, Object> jsonDoc) {
+		Gson gson = new GsonBuilder().create();
+		String json = gson.toJson(jsonDoc);
+		return prepareIndex(type, json);
+	}
+
+	/**
+	 * To prepare the index. To have control on when it is executed or to add
+	 * parameters or queries
 	 * 
 	 * @param type
 	 *            the type of the object
@@ -244,7 +279,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 
 	public BoundRequestBuilder prepareIndex(String type, String id, JsonObject jsonDoc) {
 		return prepareIndex(type, id, jsonDoc.getAsString());
-
 	}
 
 	public BoundRequestBuilder prepareIndex(String type, String id, Map<String, Object> jsonDoc) {
@@ -257,7 +291,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 * To update a document. We can pass just the portion of the object to be
 	 * updated. parameters is a list of parameters which are the name value
 	 * pairs which will be added during the execution
-	 * 
 	 * 
 	 * @param type
 	 *            the type of the object
@@ -441,6 +474,19 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 				.setBody(body);
 	}
 
+	public BoundRequestBuilder prepareSearch(String type) {
+		return super.preparePost(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth());
+	}
+
+	public BoundRequestBuilder prepareSearch(String type, QueryBuilder qb) {
+		return super.preparePost(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
+				.setBody(qb.toString());
+	}
+
+	public BoundRequestBuilder prepareSearch() {
+		return super.preparePost(URL + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth());
+	}
+
 	/**
 	 * 
 	 * @param type
@@ -483,7 +529,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            Handler.
 	 */
 	@SuppressWarnings("unchecked")
-	public void getStream(String type, String id, AppbaseHandler asyncHandler) {
+	public void getStream(String type, String id, AppbaseStreamHandler asyncHandler) {
 		super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth()).setRequestTimeout(60000000)
 				.addQueryParams(getParameters()).execute(asyncHandler);
 	}
@@ -492,15 +538,15 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		return super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).addQueryParams(getParameters());
 	}
-	
-	public PipedInputStream getPipedStream(String type, String id) throws IOException{
-        PipedOutputStream output = new PipedOutputStream();
-        
-        final PipedInputStream input = new PipedInputStream(output);
-        
-        AppbaseStreamHandler handler=new AppbaseStreamHandler(output);
+
+	public PipedInputStream getPipedStream(String type, String id) throws IOException {
+		PipedOutputStream output = new PipedOutputStream();
+
+		final PipedInputStream input = new PipedInputStream(output);
+
+		AppbasePipedStreamHandler handler = new AppbasePipedStreamHandler(output);
 		super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth()).setRequestTimeout(60000000)
-		.addQueryParams(getParameters()).execute(handler);
+				.addQueryParams(getParameters()).execute(handler);
 		return input;
 	}
 
@@ -520,11 +566,16 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            Handler.
 	 */
 	@SuppressWarnings("unchecked")
-	public void searchStream(String type, String body, AppbaseHandler asyncHandler) {
-		super.prepareGet(getURL(type) + SEPARATOR + "_search")
-				.addHeader("Authorization", "Basic " + getAuth())
-				.setRequestTimeout(60000000)
-				.setBody(body).addQueryParams(getParameters())
+	public void searchStream(String type, String body, AppbaseStreamHandler asyncHandler) {
+		super.prepareGet(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
+				.setRequestTimeout(60000000).setBody(body).addQueryParams(getParameters()).execute(asyncHandler);
+
+	}
+
+	@SuppressWarnings("unchecked")
+	public void searchStream(String type, QueryBuilder body, AppbaseStreamHandler asyncHandler) {
+		super.prepareGet(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
+				.setRequestTimeout(60000000).setBody(body.toString()).addQueryParams(getParameters())
 				.execute(asyncHandler);
 
 	}
@@ -557,22 +608,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	// Extremely doubtful.
-
-	/**
-	 * Index a document without providing the id. Id will be automatically
-	 * created.
-	 * 
-	 * @param type
-	 *            type of the object
-	 * @param jsonDoc
-	 *            the object to be indexed
-	 */
-	public void indexAutoId(String type, String jsonDoc) {
-		RequestBuilder builder = new RequestBuilder("PUT");
-		Request request = builder.setUrl(getURL(type)).addHeader("Authorization", "Basic " + getAuth()).setBody(jsonDoc)
-				.build();
-		super.executeRequest(request);
-	}
 
 	// public void getStreamThread(String type, String id, AsyncHandler<String>
 	// asyncHandler) {

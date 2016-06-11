@@ -1,0 +1,14 @@
+package elasticsearchlibrary;
+
+public class AppbaseTrial {
+	public static void main(String[] args) {
+		String user = "7eJWHfD4P",
+				pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
+				URL = "http://scalr.api.appbase.io",
+				appName = "jsfiddle-demo",
+				jsonDoc = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
+
+		AppbaseClient c=new AppbaseClient(URL, app, userName, password);
+	}
+
+}

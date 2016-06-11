@@ -1,0 +1,25 @@
+package elasticsearchlibrary;
+
+import org.asynchttpclient.AsyncHttpClient;
+import org.asynchttpclient.BoundRequestBuilder;
+import org.asynchttpclient.Request;
+
+public class AppbaseRequestBuilder extends BoundRequestBuilder {
+
+	public AppbaseRequestBuilder(AsyncHttpClient client, String method, boolean isDisableUrlEncoding,
+			boolean validateHeaders) {
+		super(client, method, isDisableUrlEncoding, validateHeaders);
+		// TODO Auto-generated constructor stub
+	}
+
+	public AppbaseRequestBuilder(AsyncHttpClient client, String method, boolean isDisableUrlEncoding) {
+		super(client, method, isDisableUrlEncoding);
+		// TODO Auto-generated constructor stub
+	}
+
+
+	public AppbaseRequestBuilder(AsyncHttpClient client, Request prototype) {
+		super(client, prototype);
+		// TODO Auto-generated constructor stub
+	}
+}

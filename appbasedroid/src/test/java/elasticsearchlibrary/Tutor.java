@@ -2,6 +2,8 @@ package elasticsearchlibrary;
 
 import java.util.Random;
 
+import elasticsearchlibrary.examples.Trial;
+
 public class Tutor {
 
 	static String randomId=null;

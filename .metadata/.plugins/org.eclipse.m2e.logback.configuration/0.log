@@ -799,3 +799,487 @@
 2016-06-10 12:40:17,094 [Worker-160] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
 2016-06-10 12:40:17,096 [Worker-160] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
 2016-06-10 12:40:17,097 [Worker-160] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 13:06:36,995 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:06:36,996 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 13:06:36,997 [Worker-166] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:06:36,998 [Worker-166] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 13:25:07,688 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:25:07,696 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 13:25:07,699 [Worker-6] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:25:07,700 [Worker-6] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 13:58:25,219 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:58:25,221 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 13:58:25,223 [Worker-20] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:58:25,225 [Worker-20] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 13:58:35,943 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:58:35,944 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 13:58:35,945 [Worker-25] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 13:58:35,946 [Worker-25] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:52:58,150 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:52:58,151 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:52:58,153 [Worker-46] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:52:58,154 [Worker-46] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:53:32,515 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:53:32,515 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:53:32,516 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:53:32,517 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:53:44,233 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:53:44,233 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:53:44,238 [Worker-47] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:53:44,238 [Worker-47] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:55:30,139 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:55:30,139 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:55:30,141 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:55:30,141 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:57:30,301 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:57:30,302 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:57:30,303 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:57:30,305 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:57:31,978 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is not out-of-date. No remote download required.
+2016-06-10 15:58:06,204 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:58:06,205 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:58:06,206 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:58:06,207 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:58:43,804 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:58:43,805 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:58:43,806 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:58:43,807 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:59:08,452 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:59:08,453 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:59:08,468 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:59:08,469 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:59:15,783 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:59:15,784 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:59:15,785 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:59:15,786 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 15:59:29,835 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:59:29,836 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 15:59:29,837 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 15:59:29,838 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:00:37,712 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:00:37,712 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:00:37,713 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:00:37,714 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:01:20,245 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:01:20,246 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:01:20,248 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:01:20,248 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:01:28,430 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:01:28,431 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:01:28,432 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:01:28,432 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:02:01,321 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:01,322 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:02:01,323 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:01,324 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:02:12,301 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:12,301 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:02:12,304 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:12,306 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:02:15,255 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:15,256 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:02:15,259 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:15,259 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:02:20,087 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:20,088 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:02:20,090 [Worker-52] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:02:20,092 [Worker-52] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:03:22,912 [Worker-51] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:03:22,913 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:03:22,914 [Worker-51] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:03:22,915 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:03:35,261 [Worker-51] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:03:35,261 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:03:35,262 [Worker-51] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:03:35,262 [Worker-51] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:04:02,820 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:02,820 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:04:02,821 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:02,822 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:04:19,734 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:19,735 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:04:19,736 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:19,737 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:04:32,771 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:32,772 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:04:32,773 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:32,774 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:04:38,106 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:38,106 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:04:38,107 [Worker-42] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:04:38,108 [Worker-42] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:05:11,668 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:05:11,669 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:05:11,670 [Worker-54] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:05:11,671 [Worker-54] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:06:44,006 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:06:44,007 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:06:44,008 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:06:44,009 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:07:21,751 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:07:21,752 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:07:21,753 [Worker-45] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:07:21,753 [Worker-45] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:07:45,729 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:07:45,729 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:07:45,731 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:07:45,731 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:08:03,137 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:08:03,138 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:08:03,139 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:08:03,140 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:09:02,260 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:09:02,261 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:09:02,262 [Worker-59] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:09:02,263 [Worker-59] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:25:36,668 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:25:36,670 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:25:36,670 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:25:36,671 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-10 16:25:48,742 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:25:48,742 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-10 16:25:48,744 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-10 16:25:48,744 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 00:27:21,648 [Worker-8] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: appbaseio:appbase-droid:0.0.1-SNAPSHOT @ /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/pom.xml.
+2016-06-11 00:27:22,212 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 00:27:22,215 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 00:27:22,218 [Worker-8] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 00:27:22,218 [Worker-8] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 00:28:41,087 [Worker-10] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: appbaseio:appbase-droid:0.0.1-SNAPSHOT @ /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/pom.xml.
+2016-06-11 00:28:46,266 [main] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache file is out-of-date. Remote download required.
+2016-06-11 00:28:46,303 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/elasticsearch/elasticsearch/2.2.0/elasticsearch-2.2.0.pom
+2016-06-11 00:28:46,784 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/elasticsearch/elasticsearch/2.2.0/elasticsearch-2.2.0.pom
+2016-06-11 00:28:47,413 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/elasticsearch/parent/2.2.0/parent-2.2.0.pom
+2016-06-11 00:28:51,101 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/elasticsearch/parent/2.2.0/parent-2.2.0.pom
+2016-06-11 00:28:52,030 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/org/elasticsearch/elasticsearch/2.2.0/elasticsearch-2.2.0.jar
+2016-06-11 00:30:00,837 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/org/elasticsearch/elasticsearch/2.2.0/elasticsearch-2.2.0.jar
+2016-06-11 00:30:01,134 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloading https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.6.2/jackson-core-2.6.2.jar
+2016-06-11 00:30:03,604 [Worker-19] INFO  o.e.m.c.i.e.AbstractTransferListenerAdapter - Downloaded https://repo.maven.apache.org/maven2/com/fasterxml/jackson/core/jackson-core/2.6.2/jackson-core-2.6.2.jar
+2016-06-11 00:30:03,898 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 00:30:03,899 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 00:30:03,903 [Worker-10] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 00:30:03,904 [Worker-10] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 00:30:04,077 [Worker-18] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid
+2016-06-11 00:30:04,077 [Worker-18] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2016-06-11 00:30:06,466 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 00:30:06,469 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 00:30:06,475 [Worker-21] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 00:30:06,476 [Worker-21] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 11:54:09,469 [Worker-33] INFO  o.e.m.i.launch.MavenLaunchDelegate - /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid
+2016-06-11 11:54:09,471 [Worker-33] INFO  o.e.m.i.launch.MavenLaunchDelegate -  mvn  -B install
+2016-06-11 11:56:38,990 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:56:38,991 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 11:56:38,993 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:56:38,994 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 11:56:40,063 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:56:40,063 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 11:56:40,065 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:56:40,066 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 11:58:54,908 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:58:54,908 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 11:58:54,910 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:58:54,911 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 11:59:50,598 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:59:50,598 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 11:59:50,600 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 11:59:50,600 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:00:08,726 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:00:08,727 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:00:08,728 [Worker-40] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:00:08,732 [Worker-40] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:00:09,744 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:00:09,745 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:00:09,746 [Worker-37] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:00:09,746 [Worker-37] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:00:10,975 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:00:10,975 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:00:10,976 [Worker-41] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:00:10,977 [Worker-41] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:15:57,804 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:15:57,806 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:15:57,809 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:15:57,810 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:16:37,263 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:16:37,263 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:16:37,265 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:16:37,265 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:16:38,278 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:16:38,279 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:16:38,280 [Worker-49] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:16:38,280 [Worker-49] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:18:27,896 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:18:27,898 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:18:27,899 [Worker-50] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:18:27,900 [Worker-50] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:19:02,469 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:19:02,470 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:19:02,471 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:19:02,472 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:19:30,326 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:19:30,328 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:19:30,330 [Worker-48] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:19:30,331 [Worker-48] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:34:45,929 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:34:45,930 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:34:45,932 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:34:45,933 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:36:04,358 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:36:04,359 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:36:04,362 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:36:04,363 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:36:57,468 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:36:57,469 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:36:57,473 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:36:57,474 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:37:04,906 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:37:04,907 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:37:04,908 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:37:04,909 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:37:08,711 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:37:08,712 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:37:08,713 [Worker-58] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:37:08,714 [Worker-58] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:38:39,547 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:39,548 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:38:39,549 [Worker-62] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:39,549 [Worker-62] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:38:48,673 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:48,674 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:38:48,675 [Worker-61] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:48,676 [Worker-61] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:38:53,018 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:53,018 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:38:53,020 [Worker-63] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:53,021 [Worker-63] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:38:57,823 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:57,824 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:38:57,825 [Worker-60] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:38:57,826 [Worker-60] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:48:27,364 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:48:27,364 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:48:27,366 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:48:27,366 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:48:56,762 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:48:56,763 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:48:56,764 [Worker-68] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:48:56,764 [Worker-68] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 12:55:56,906 [Worker-72] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:55:56,907 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 12:55:56,908 [Worker-72] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 12:55:56,909 [Worker-72] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 13:04:07,723 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:04:07,724 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 13:04:07,725 [Worker-71] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:04:07,726 [Worker-71] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 13:06:56,433 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:06:56,434 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 13:06:56,435 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:06:56,436 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 13:06:58,511 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:06:58,512 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 13:06:58,513 [Worker-79] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:06:58,514 [Worker-79] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 13:19:56,710 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:19:56,714 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 13:19:56,715 [Worker-82] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 13:19:56,715 [Worker-82] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:22:25,361 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:22:25,361 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:22:25,362 [Worker-84] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:22:25,363 [Worker-84] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:22:33,048 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:22:33,049 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:22:33,050 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:22:33,050 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:23:25,056 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:23:25,056 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:23:25,057 [Worker-80] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:23:25,058 [Worker-80] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:24:32,907 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:24:32,908 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:24:32,909 [Worker-88] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:24:32,910 [Worker-88] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:37:59,593 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:37:59,594 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:37:59,595 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:37:59,596 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:39:39,866 [Worker-90] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:39:39,867 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:39:39,867 [Worker-90] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:39:39,868 [Worker-90] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:41:36,523 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:41:36,524 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:41:36,524 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:41:36,525 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:48:09,097 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:09,098 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:48:09,099 [Worker-92] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:09,100 [Worker-92] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:48:31,231 [Worker-95] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:31,232 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:48:31,233 [Worker-95] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:31,234 [Worker-95] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:48:39,640 [Worker-94] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:39,641 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:48:39,642 [Worker-94] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:39,644 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:48:45,639 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:45,640 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:48:45,641 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:48:45,641 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:49:09,134 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:09,134 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:49:09,135 [Worker-86] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:09,136 [Worker-86] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:49:29,221 [Worker-96] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:29,221 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:49:29,222 [Worker-96] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:29,224 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:49:49,459 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:49,460 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:49:49,463 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:49,464 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:49:53,948 [Worker-94] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:53,949 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:49:53,950 [Worker-94] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:53,950 [Worker-94] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:49:57,753 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:57,754 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:49:57,755 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:49:57,756 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:50:36,333 [Worker-97] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:50:36,333 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:50:36,334 [Worker-97] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:50:36,334 [Worker-97] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:50:49,651 [Worker-96] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:50:49,651 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:50:49,652 [Worker-96] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:50:49,653 [Worker-96] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:59:01,921 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:59:01,922 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:59:01,923 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:59:01,925 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:59:13,905 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:59:13,906 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:59:13,907 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:59:13,907 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 14:59:19,669 [Worker-103] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:59:19,669 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 14:59:19,671 [Worker-103] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 14:59:19,671 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:00:40,911 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:00:40,912 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:00:40,913 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:00:40,913 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:00:45,867 [Worker-101] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:00:45,867 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:00:45,868 [Worker-101] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:00:45,869 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:00:48,989 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:00:48,990 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:00:48,991 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:00:48,991 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:01:03,495 [Worker-103] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:01:03,496 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:01:03,497 [Worker-103] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:01:03,497 [Worker-103] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:01:30,527 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:01:30,527 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:01:30,528 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:01:30,531 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:01:36,229 [Worker-101] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:01:36,230 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:01:36,232 [Worker-101] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:01:36,233 [Worker-101] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:02:58,863 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:02:58,865 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:02:58,866 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:02:58,866 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:03:13,311 [Worker-104] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:03:13,311 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:03:13,313 [Worker-104] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:03:13,313 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:03:40,827 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:03:40,827 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:03:40,828 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:03:40,828 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:03:42,848 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:03:42,848 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:03:42,849 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:03:42,850 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:04:31,160 [Worker-104] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:04:31,161 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:04:31,163 [Worker-104] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:04:31,163 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:04:43,410 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:04:43,411 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:04:43,411 [Worker-99] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:04:43,412 [Worker-99] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:04:58,183 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:04:58,184 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:04:58,185 [Worker-102] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:04:58,185 [Worker-102] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:05:08,588 [Worker-104] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:05:08,588 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:05:08,589 [Worker-104] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:05:08,589 [Worker-104] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:06:02,707 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:06:02,707 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:06:02,708 [Worker-98] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:06:02,708 [Worker-98] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:25:21,841 [Worker-105] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:25:21,842 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:25:21,844 [Worker-105] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:25:21,844 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:25:46,530 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:25:46,531 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:25:46,532 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:25:46,533 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:26:08,427 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:26:08,428 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:26:08,429 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:26:08,430 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:26:51,009 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:26:51,010 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:26:51,011 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:26:51,011 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:26:55,813 [Worker-105] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:26:55,813 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:26:55,814 [Worker-105] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:26:55,814 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:27:14,564 [Worker-107] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:27:14,565 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:27:14,566 [Worker-107] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:27:14,566 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:27:28,798 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:27:28,798 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:27:28,799 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:27:28,800 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:28:26,063 [Worker-105] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:28:26,064 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:28:26,065 [Worker-105] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:28:26,065 [Worker-105] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:28:35,733 [Worker-107] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:28:35,734 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:28:35,735 [Worker-107] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:28:35,735 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:28:40,981 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:28:40,981 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:28:40,982 [Worker-111] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:28:40,982 [Worker-111] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:29:38,093 [Worker-107] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:29:38,093 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:29:38,094 [Worker-107] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:29:38,094 [Worker-107] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:29:42,166 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:29:42,167 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:29:42,168 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:29:42,169 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:29:48,590 [Worker-112] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:29:48,591 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:29:48,592 [Worker-112] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:29:48,593 [Worker-112] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
+2016-06-11 15:30:00,668 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:30:00,669 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/main/resources
+2016-06-11 15:30:00,670 [Worker-113] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2016-06-11 15:30:00,671 [Worker-113] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory /Users/tirthshah/Desktop/Tirth/appbase-droid/appbasedroid/src/test/resources
