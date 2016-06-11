@@ -27,11 +27,14 @@ import org.asynchttpclient.uri.Uri;
 import org.elasticsearch.index.query.QueryBuilder;
 import org.reactivestreams.Publisher;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.resolver.NameResolver;
 
 public class AppbaseRequestBuilder {
-	
 
 	BoundRequestBuilder request;
 
@@ -56,52 +59,64 @@ public class AppbaseRequestBuilder {
 		return request.equals(obj);
 	}
 
-	public BoundRequestBuilder setUrl(String url) {
-		return request.setUrl(url);
+	public AppbaseRequestBuilder setUrl(String url) {
+		request.setUrl(url);
+		return this;
 	}
 
-	public BoundRequestBuilder setUri(Uri uri) {
-		return request.setUri(uri);
+	public AppbaseRequestBuilder setUri(Uri uri) {
+		request.setUri(uri);
+		return this;
 	}
 
-	public BoundRequestBuilder setAddress(InetAddress address) {
-		return request.setAddress(address);
+	public AppbaseRequestBuilder setAddress(InetAddress address) {
+		request.setAddress(address);
+		return this;
 	}
 
-	public BoundRequestBuilder setLocalAddress(InetAddress address) {
-		return request.setLocalAddress(address);
+	public AppbaseRequestBuilder setLocalAddress(InetAddress address) {
+		request.setLocalAddress(address);
+		return this;
 	}
 
-	public BoundRequestBuilder setVirtualHost(String virtualHost) {
-		return request.setVirtualHost(virtualHost);
+	public AppbaseRequestBuilder setVirtualHost(String virtualHost) {
+		request.setVirtualHost(virtualHost);
+		return this;
 	}
 
-	public BoundRequestBuilder setHeader(CharSequence name, String value) {
-		return request.setHeader(name, value);
+	public AppbaseRequestBuilder setHeader(CharSequence name, String value) {
+		request.setHeader(name, value);
+		return this;
 	}
 
-	public BoundRequestBuilder addHeader(CharSequence name, String value) {
-		return request.addHeader(name, value);
+	public AppbaseRequestBuilder addHeader(CharSequence name, String value) {
+		request.addHeader(name, value);
+		return this;
 	}
 
-	public BoundRequestBuilder setHeaders(HttpHeaders headers) {
-		return request.setHeaders(headers);
+	public AppbaseRequestBuilder setHeaders(HttpHeaders headers) {
+		request.setHeaders(headers);
+		return this;
 	}
 
-	public BoundRequestBuilder setHeaders(Map<String, Collection<String>> headers) {
-		return request.setHeaders(headers);
+	public AppbaseRequestBuilder setHeaders(Map<String, Collection<String>> headers) {
+		request.setHeaders(headers);
+		return this;
 	}
 
-	public BoundRequestBuilder setCookies(Collection<Cookie> cookies) {
-		return request.setCookies(cookies);
+	public AppbaseRequestBuilder setCookies(Collection<Cookie> cookies) {
+		request.setCookies(cookies);
+		return this;
 	}
 
-	public BoundRequestBuilder addCookie(Cookie cookie) {
-		return request.addCookie(cookie);
+	public AppbaseRequestBuilder addCookie(Cookie cookie) {
+		request.addCookie(cookie);
+		return this;
 	}
 
-	public BoundRequestBuilder addOrReplaceCookie(Cookie cookie) {
-		return request.addOrReplaceCookie(cookie);
+	public AppbaseRequestBuilder addOrReplaceCookie(Cookie cookie) {
+		addOrReplaceCookie(cookie);
+		return this;
 	}
 
 	public void resetCookies() {
@@ -123,129 +138,170 @@ public class AppbaseRequestBuilder {
 	public void resetMultipartData() {
 		request.resetMultipartData();
 	}
-	
-	public BoundRequestBuilder setBody(File file) {
-		return request.setBody(file);
-	}
-	
-	public BoundRequestBuilder setBody(QueryBuilder qb) {
-		return request.setBody(qb.toString());
-	}
 
 	public String toString() {
 		return request.toString();
 	}
 
-	public BoundRequestBuilder setBody(byte[] data) {
-		return request.setBody(data);
+	public AppbaseRequestBuilder setBody(File file) {
+		request.setBody(file);
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(List<byte[]> data) {
-		return request.setBody(data);
+	public AppbaseRequestBuilder setBody(QueryBuilder qb) {
+		request.setBody(qb.toString());
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(String data) {
-		return request.setBody(data);
+	public AppbaseRequestBuilder setBody(byte[] data) {
+		request.setBody(data);
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(ByteBuffer data) {
-		return request.setBody(data);
+	public AppbaseRequestBuilder setBody(List<byte[]> data) {
+		request.setBody(data);
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(InputStream stream) {
-		return request.setBody(stream);
+	public AppbaseRequestBuilder setBody(String data) {
+		request.setBody(data);
+		return this;
+	}
+	
+	public AppbaseRequestBuilder setBody(JsonObject data) {
+		request.setBody(data.toString());
+		return this;
+	}
+	public AppbaseRequestBuilder setBody(Map<String, Object> data) {
+		Gson gson = new GsonBuilder().create();
+		String json = gson.toJson(data);
+		request.setBody(json);
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(Publisher<ByteBuffer> publisher) {
-		return request.setBody(publisher);
+	public AppbaseRequestBuilder setBody(ByteBuffer data) {
+		request.setBody(data);
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(Publisher<ByteBuffer> publisher, long contentLength) {
-		return request.setBody(publisher, contentLength);
+	public AppbaseRequestBuilder setBody(InputStream stream) {
+		request.setBody(stream);
+		return this;
 	}
 
-	public BoundRequestBuilder setBody(BodyGenerator bodyGenerator) {
-		return request.setBody(bodyGenerator);
+	public AppbaseRequestBuilder setBody(Publisher<ByteBuffer> publisher) {
+		request.setBody(publisher);
+		return this;
 	}
 
-	public BoundRequestBuilder addQueryParam(String name, String value) {
-		return request.addQueryParam(name, value);
+	public AppbaseRequestBuilder setBody(Publisher<ByteBuffer> publisher, long contentLength) {
+		request.setBody(publisher, contentLength);
+		return this;
 	}
 
-	public BoundRequestBuilder addQueryParams(List<Param> params) {
-		return request.addQueryParams(params);
+	public AppbaseRequestBuilder setBody(BodyGenerator bodyGenerator) {
+		request.setBody(bodyGenerator);
+		return this;
 	}
 
-	public BoundRequestBuilder setQueryParams(Map<String, List<String>> map) {
-		return request.setQueryParams(map);
+	public AppbaseRequestBuilder addQueryParam(String name, String value) {
+		request.addQueryParam(name, value);
+		return this;
 	}
 
-	public BoundRequestBuilder setQueryParams(List<Param> params) {
-		return request.setQueryParams(params);
+	public AppbaseRequestBuilder addQueryParams(List<Param> params) {
+		request.addQueryParams(params);
+		return this;
 	}
 
-	public BoundRequestBuilder addFormParam(String name, String value) {
-		return request.addFormParam(name, value);
+	public AppbaseRequestBuilder setQueryParams(Map<String, List<String>> map) {
+		request.setQueryParams(map);
+		return this;
 	}
 
-	public BoundRequestBuilder setFormParams(Map<String, List<String>> map) {
-		return request.setFormParams(map);
+	public AppbaseRequestBuilder setQueryParams(List<Param> params) {
+		request.setQueryParams(params);
+		return this;
 	}
 
-	public BoundRequestBuilder setFormParams(List<Param> params) {
-		return request.setFormParams(params);
+	public AppbaseRequestBuilder addFormParam(String name, String value) {
+		request.addFormParam(name, value);
+		return this;
 	}
 
-	public BoundRequestBuilder addBodyPart(Part bodyPart) {
-		return request.addBodyPart(bodyPart);
+	public AppbaseRequestBuilder setFormParams(Map<String, List<String>> map) {
+		request.setFormParams(map);
+		return this;
 	}
 
-	public BoundRequestBuilder setBodyParts(List<Part> bodyParts) {
-		return request.setBodyParts(bodyParts);
+	public AppbaseRequestBuilder setFormParams(List<Param> params) {
+		request.setFormParams(params);
+		return this;
 	}
 
-	public BoundRequestBuilder setProxyServer(ProxyServer proxyServer) {
-		return request.setProxyServer(proxyServer);
+	public AppbaseRequestBuilder addBodyPart(Part bodyPart) {
+		request.addBodyPart(bodyPart);
+		return this;
 	}
 
-	public BoundRequestBuilder setProxyServer(Builder proxyServerBuilder) {
-		return request.setProxyServer(proxyServerBuilder);
+	public AppbaseRequestBuilder setBodyParts(List<Part> bodyParts) {
+		request.setBodyParts(bodyParts);
+		return this;
 	}
 
-	public BoundRequestBuilder setRealm(Realm realm) {
-		return request.setRealm(realm);
+	public AppbaseRequestBuilder setProxyServer(ProxyServer proxyServer) {
+		request.setProxyServer(proxyServer);
+		return this;
 	}
 
-	public BoundRequestBuilder setFollowRedirect(boolean followRedirect) {
-		return request.setFollowRedirect(followRedirect);
+	public AppbaseRequestBuilder setProxyServer(Builder proxyServerBuilder) {
+		request.setProxyServer(proxyServerBuilder);
+		return this;
 	}
 
-	public BoundRequestBuilder setRequestTimeout(int requestTimeout) {
-		return request.setRequestTimeout(requestTimeout);
+	public AppbaseRequestBuilder setRealm(Realm realm) {
+		request.setRealm(realm);
+		return this;
 	}
 
-	public BoundRequestBuilder setRangeOffset(long rangeOffset) {
-		return request.setRangeOffset(rangeOffset);
+	public AppbaseRequestBuilder setFollowRedirect(boolean followRedirect) {
+		request.setFollowRedirect(followRedirect);
+		return this;
 	}
 
-	public BoundRequestBuilder setMethod(String method) {
-		return request.setMethod(method);
+	public AppbaseRequestBuilder setRequestTimeout(int requestTimeout) {
+		request.setRequestTimeout(requestTimeout);
+		return this;
 	}
 
-	public BoundRequestBuilder setCharset(Charset charset) {
-		return request.setCharset(charset);
+	public AppbaseRequestBuilder setRangeOffset(long rangeOffset) {
+		request.setRangeOffset(rangeOffset);
+		return this;
 	}
 
-	public BoundRequestBuilder setChannelPoolPartitioning(ChannelPoolPartitioning channelPoolPartitioning) {
-		return request.setChannelPoolPartitioning(channelPoolPartitioning);
+	public AppbaseRequestBuilder setMethod(String method) {
+		request.setMethod(method);
+		return this;
 	}
 
-	public BoundRequestBuilder setNameResolver(NameResolver<InetAddress> nameResolver) {
-		return request.setNameResolver(nameResolver);
+	public AppbaseRequestBuilder setCharset(Charset charset) {
+		request.setCharset(charset);
+		return this;
 	}
 
-	public BoundRequestBuilder setSignatureCalculator(SignatureCalculator signatureCalculator) {
-		return request.setSignatureCalculator(signatureCalculator);
+	public AppbaseRequestBuilder setChannelPoolPartitioning(ChannelPoolPartitioning channelPoolPartitioning) {
+		request.setChannelPoolPartitioning(channelPoolPartitioning);
+		return this;
+	}
+
+	public AppbaseRequestBuilder setNameResolver(NameResolver<InetAddress> nameResolver) {
+		request.setNameResolver(nameResolver);
+		return this;
+	}
+
+	public AppbaseRequestBuilder setSignatureCalculator(SignatureCalculator signatureCalculator) {
+		request.setSignatureCalculator(signatureCalculator);
+		return this;
 	}
 
 	public Request build() {
