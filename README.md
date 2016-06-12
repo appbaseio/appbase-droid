@@ -17,7 +17,7 @@ String user = "7eJWHfD4P",
        pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
        URL = "http://scalr.api.appbase.io",
        appName = "jsfiddle-demo";
-Appbase appbase = new Appbase(URL, appName, user, pass);
+AppbaseClient appbase = new AppbaseClient(URL, appName, user, pass);
 
 ```
 
@@ -26,29 +26,31 @@ To index you can simply do
 ```java
 String result = appbase.index(type, randomId, jsonDoc);
 ```
+You can also do 
+```java
+ListenableFuture<Response> f = prepareIndex(type, id, jsonDoc).execute();
+```
 **Update**
+To update the document
 ```java
 String jsonDoc = "{doc: {\"price\": 50}}";
 String result = appbase.update(type, randomId, null, jsonDoc);
+```
+OR
+```java
+ListenableFuture<Response> f = prepareUpdate(type, id, parameters, jsonDoc).execute();
 ```
 **Delete**
 ```java
 String result = appbase.delete(type, randomId);
 ```
-**Bulk**
-If an integer other than the INDEX ,UPDATE or DELETE is entered, it will try to index.
-
+OR
 ```java
-BulkRequestObject[] bulk = new BulkRequestObject[4];
-bulk[0] = new BulkRequestObject(type, randomId,
-		BulkRequestObject.INDEX, jsonDoc);
-bulk[1] = new BulkRequestObject(type, randomId,
-		BulkRequestObject.UPDATE, "{doc: {\"price\":6}}");
-bulk[2] = new BulkRequestObject(type, randomId,
-		BulkRequestObject.DELETE, null);
-bulk[3] = new BulkRequestObject(type, randomId, 100, jsonDoc);
-
-appbase.bulk(bulk);
+ListenableFuture<Response> f = prepareDelete(type, id).execute();
+```
+**Bulk**
+```java
+bulkExecute
 ```
 **Get**
 ```java

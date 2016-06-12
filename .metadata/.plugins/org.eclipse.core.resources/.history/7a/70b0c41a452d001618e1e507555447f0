@@ -1,0 +1,5 @@
+package elasticsearchlibrary;
+
+public class AppbaseResponse {
+
+}
