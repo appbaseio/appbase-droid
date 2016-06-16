@@ -38,7 +38,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	// use the setters to set the the URL, app, userName, password.
 	/**
 	 * new Appbase()
-	 * 
+	 *     	
 	 * create a new Appbase() by passing in arguments:
 	 * 
 	 * @param URL
@@ -223,10 +223,10 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	public String index(String type, String id, JsonObject jsonDoc) {
-		return index(type, id, jsonDoc.getAsString());
+		return index(type, id, jsonDoc.toString());
 	}
 
-	public String index(String type, String id, Map<String, Object> jsonDoc) {
+	public String index(String type, String id, Map jsonDoc) {
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(jsonDoc);
 		return index(type, id, json);
@@ -255,7 +255,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	public AppbaseRequestBuilder prepareIndex(String type, JsonObject jsonDoc) {
-		return prepareIndex(type, jsonDoc.getAsString());
+		return prepareIndex(type, jsonDoc.toString());
 	}
 
 	public AppbaseRequestBuilder prepareIndex(String type, Map<String, Object> jsonDoc) {
@@ -286,10 +286,10 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	public AppbaseRequestBuilder prepareIndex(String type, String id, JsonObject jsonDoc) {
-		return prepareIndex(type, id, jsonDoc.getAsString());
+		return prepareIndex(type, id, jsonDoc.toString());
 	}
 
-	public AppbaseRequestBuilder prepareIndex(String type, String id, Map<String, Object> jsonDoc) {
+	public AppbaseRequestBuilder prepareIndex(String type, String id, Map<String, String> jsonDoc) {
 		Gson gson = new GsonBuilder().create();
 		String json = gson.toJson(jsonDoc);
 		return prepareIndex(type, id, json);
@@ -330,7 +330,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	public String update(String type, String id, List<Param> parameters, JsonObject jsonDoc) {
-		return update(type, id, parameters, jsonDoc.getAsString());
+		return update(type, id, parameters, jsonDoc.toString());
 	}
 
 	public String update(String type, String id, List<Param> parameters, Map<String, Object> jsonDoc) {
@@ -349,7 +349,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	public AppbaseRequestBuilder prepareUpdate(String type, String id, List<Param> parameters, JsonObject jsonDoc) {
-		return prepareUpdate(type, id, parameters, jsonDoc.getAsString());
+		return prepareUpdate(type, id, parameters, jsonDoc.toString());
 
 	}
 

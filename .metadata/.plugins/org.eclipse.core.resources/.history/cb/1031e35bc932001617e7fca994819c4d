@@ -1,0 +1,13 @@
+package elasticsearchlibrary.handlers;
+
+import org.asynchttpclient.AsyncCompletionHandler;
+import org.asynchttpclient.Response;
+
+public class AppbaseHandler<T> extends AsyncCompletionHandler<T> {
+
+	@Override
+	public T onCompleted(Response response) throws Exception {
+		return null;
+	}
+	
+}

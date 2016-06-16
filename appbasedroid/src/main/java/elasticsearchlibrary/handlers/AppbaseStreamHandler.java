@@ -62,7 +62,6 @@ public abstract class AppbaseStreamHandler<T> implements AsyncHandler<T>{
 	public State onBodyPartReceived(HttpResponseBodyPart bodyPart) throws Exception {
 		halfBody += new String(bodyPart.getBodyPartBytes());
 		JsonObject object;
-		System.out.println(halfBody);
 		try {
 			JsonElement element = jsParser.parse(halfBody);
 			object = element.getAsJsonObject();
@@ -74,9 +73,7 @@ public abstract class AppbaseStreamHandler<T> implements AsyncHandler<T>{
 			} else if (type == JsonElement.class || JsonElement.class.isAssignableFrom(type)) {
 				onData((T) object);
 			} else {
-				System.out.println("on data");
 				T newReceived = gson.fromJson(object, type);
-				System.out.println(newReceived + " hgvc");
 				onData(newReceived);
 			}
 

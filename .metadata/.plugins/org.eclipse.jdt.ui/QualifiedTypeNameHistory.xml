@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="javax.xml.ws.Response"/>
-<fullyQualifiedTypeName name="org.asynchttpclient.Response"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonParser"/>
 <fullyQualifiedTypeName name="java.io.PipedOutputStream"/>
 <fullyQualifiedTypeName name="elasticsearchlibrary.AppbaseStreamHandler"/>
@@ -9,11 +8,8 @@
 <fullyQualifiedTypeName name="org.asynchttpclient.RequestBuilderBase"/>
 <fullyQualifiedTypeName name="java.io.PipedInputStream"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.lang.reflect.Type"/>
-<fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="org.omg.PortableInterceptor.ObjectReferenceFactory"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="org.asynchttpclient.AsyncHandler"/>
 <fullyQualifiedTypeName name="org.asynchttpclient.DefaultAsyncHttpClient"/>
 <fullyQualifiedTypeName name="elasticsearchlibrary.AppbaseHandler"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonElement"/>
@@ -25,9 +21,20 @@
 <fullyQualifiedTypeName name="org.elasticsearch.index.query.QueryBuilders"/>
 <fullyQualifiedTypeName name="org.elasticsearch.index.query.QueryBuilder"/>
 <fullyQualifiedTypeName name="elasticsearchlibrary.handlers.AppbasePipedStreamHandler"/>
-<fullyQualifiedTypeName name="elasticsearchlibrary.handlers.AppbaseHandler"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="org.asynchttpclient.BoundRequestBuilder"/>
 <fullyQualifiedTypeName name="elasticsearchlibrary.requestbuilders.AppbaseRequestBuilder"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonDeserializationContext"/>
+<fullyQualifiedTypeName name="com.google.gson.Gson"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.lang.reflect.Type"/>
+<fullyQualifiedTypeName name="com.google.common.reflect.TypeToken"/>
+<fullyQualifiedTypeName name="org.asynchttpclient.AsyncCompletionHandler"/>
+<fullyQualifiedTypeName name="org.asynchttpclient.Response"/>
+<fullyQualifiedTypeName name="org.asynchttpclient.Response.ResponseBuilder"/>
+<fullyQualifiedTypeName name="org.asynchttpclient.AsyncHandler"/>
+<fullyQualifiedTypeName name="elasticsearchlibrary.handlers.AppbaseHandler"/>
+<fullyQualifiedTypeName name="org.asynchttpclient.ListenableFuture"/>
 </qualifiedTypeNameHistroy>

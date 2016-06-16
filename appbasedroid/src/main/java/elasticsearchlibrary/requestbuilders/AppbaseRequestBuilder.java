@@ -8,6 +8,7 @@ import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.BoundRequestBuilder;
@@ -31,6 +32,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
+import elasticsearchlibrary.handlers.AppbaseHandler;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.resolver.NameResolver;
 
@@ -44,7 +46,15 @@ public class AppbaseRequestBuilder {
 	}
 
 	public <T> ListenableFuture<T> execute(AsyncHandler<T> handler) {
-		return request.execute(handler);
+		ListenableFuture<T> a=request.execute(handler);
+		try {
+			System.out.println(a.get());
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
+		return  a;
 	}
 
 	public int hashCode() {

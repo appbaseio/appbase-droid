@@ -1,0 +1,100 @@
+package elasticsearchlibrary.handlers;
+
+import org.asynchttpclient.AsyncCompletionHandler;
+import org.asynchttpclient.HttpResponseBodyPart;
+import org.asynchttpclient.HttpResponseHeaders;
+import org.asynchttpclient.HttpResponseStatus;
+import org.asynchttpclient.Request;
+import org.asynchttpclient.Response;
+import org.asynchttpclient.AsyncHandler.State;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+public class AppbaseHandler<T> extends AsyncCompletionHandler<T> {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(AsyncCompletionHandler.class);
+    private final Response.ResponseBuilder builder = new Response.ResponseBuilder();
+
+    /**
+     * {@inheritDoc}
+     */
+    public State onBodyPartReceived(final HttpResponseBodyPart content) throws Exception {
+        builder.accumulate(content);
+        return State.CONTINUE;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public State onStatusReceived(final HttpResponseStatus status) throws Exception {
+        builder.reset();
+        builder.accumulate(status);
+        return State.CONTINUE;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public State onHeadersReceived(final HttpResponseHeaders headers) throws Exception {
+        builder.accumulate(headers);
+        return State.CONTINUE;
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public final T onCompleted() throws Exception {
+        return onCompleted(builder.build());
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public void onThrowable(Throwable t) {
+        LOGGER.debug(t.getMessage(), t);
+    }
+
+    /**
+     * Invoked once the HTTP response processing is finished.
+     *
+     * @param response The {@link Response}
+     * @return T Value that will be returned by the associated {@link java.util.concurrent.Future}
+     * @throws Exception if something wrong happens
+     */
+     public T onCompleted(T response) throws Exception{
+    	 return response;
+     };
+
+    /**
+     * Invoked when the content (a {@link java.io.File}, {@link String} or {@link java.io.FileInputStream} has been fully
+     * written on the I/O socket.
+     *
+     * @return a {@link org.asynchttpclient.AsyncHandler.State} telling to CONTINUE or ABORT the current processing.
+     */
+    public State onHeadersWritten() {
+        return State.CONTINUE;
+    }
+
+    /**
+     * Invoked when the content (a {@link java.io.File}, {@link String} or {@link java.io.FileInputStream} has been fully
+     * written on the I/O socket.
+     *
+     * @return a {@link org.asynchttpclient.AsyncHandler.State} telling to CONTINUE or ABORT the current processing.
+     */
+    public State onContentWritten() {
+        return State.CONTINUE;
+    }
+
+    /**
+     * Invoked when the I/O operation associated with the {@link Request} body as been progressed.
+     *
+     * @param amount  The amount of bytes to transfer
+     * @param current The amount of bytes transferred
+     * @param total   The total number of bytes transferred
+     * @return a {@link org.asynchttpclient.AsyncHandler.State} telling to CONTINUE or ABORT the current processing.
+     */
+    public State onContentWriteProgress(long amount, long current, long total) {
+        return State.CONTINUE;
+    }
+	
+}

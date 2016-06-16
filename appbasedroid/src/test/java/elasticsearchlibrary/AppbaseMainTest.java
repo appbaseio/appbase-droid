@@ -10,8 +10,6 @@ import java.util.concurrent.ExecutionException;
 import org.asynchttpclient.HttpResponseBodyPart;
 import org.asynchttpclient.HttpResponseHeaders;
 import org.asynchttpclient.ListenableFuture;
-import org.asynchttpclient.RequestBuilder;
-import org.asynchttpclient.RequestBuilderBase;
 import org.asynchttpclient.Response;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
