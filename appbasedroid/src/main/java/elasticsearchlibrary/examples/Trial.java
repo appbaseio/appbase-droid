@@ -90,7 +90,7 @@ public class Trial {
     }
     
     public String tryGetTypes(){
-    	return elastic.getTypes();
+    	return elastic.getMappings();
     	
     }
     

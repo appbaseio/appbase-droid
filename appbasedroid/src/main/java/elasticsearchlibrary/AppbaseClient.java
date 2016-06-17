@@ -6,6 +6,7 @@ import java.io.PipedOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 import org.asynchttpclient.DefaultAsyncHttpClient;
@@ -17,7 +18,10 @@ import org.elasticsearch.index.query.QueryBuilder;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import elasticsearchlibrary.handlers.AppbaseStreamHandler;
 import elasticsearchlibrary.requestbuilders.AppbaseRequestBuilder;
@@ -438,7 +442,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 * 
 	 * @return returns the json document as String of the mappings
 	 */
-	public String getTypes() {
+	public String getMappings() {
 		ListenableFuture<Response> f = super.prepareGet(this.URL + SEPARATOR + "_mapping")
 				.addHeader("Authorization", "Basic " + getAuth()).execute();
 		try {
@@ -450,7 +454,28 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		}
 		return null;
 	}
+	
+	public AppbaseRequestBuilder prepareGetMappings(){
+		return new AppbaseRequestBuilder(prepareGet(this.URL + SEPARATOR + "_mapping")
+				.addHeader("Authorization", "Basic " + getAuth()));
+				
+	}
 
+	public String getTypes() {
+		
+
+		String result = getMappings();
+		JsonParser parser=new JsonParser();
+		JsonObject object = parser.parse(result).getAsJsonObject();
+		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject("jsfiddle-demo").getAsJsonObject("mappings").entrySet();//will return members of your object
+		JsonArray ret=new JsonArray();
+		for (Map.Entry<String, JsonElement> entry: entries) {
+			if(!entry.getKey().equals("_default_"))
+				ret.add(entry.getKey());
+		}
+		return ret.toString();
+	}
+	
 	public AppbaseRequestBuilder prepareGetTypes() {
 		return new AppbaseRequestBuilder(super.prepareGet(this.URL + SEPARATOR + "_mapping").addHeader("Authorization", "Basic " + getAuth()));
 	}

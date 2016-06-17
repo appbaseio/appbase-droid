@@ -138,7 +138,7 @@ public class AppbaseMainTest {
 
 	@Test
 	public void FgetTypesTest() {
-		String result = appbase.getTypes();
+		String result = appbase.getMappings();
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		assertEquals(object.isJsonObject(), true);
 	}

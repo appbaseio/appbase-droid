@@ -67,7 +67,7 @@ public class Tutor {
     }
     
     public String tryGetTypes(){
-    	return appbase.getTypes();
+    	return appbase.getMappings();
     	
     }
     

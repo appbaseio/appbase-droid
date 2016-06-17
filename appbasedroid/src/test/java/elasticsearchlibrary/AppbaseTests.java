@@ -8,6 +8,7 @@ import java.lang.reflect.Type;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
+import java.util.Set;
 import java.util.concurrent.ExecutionException;
 
 import org.asynchttpclient.AsyncCompletionHandler;
@@ -22,6 +23,9 @@ import org.junit.runners.MethodSorters;
 
 import com.google.common.reflect.TypeToken;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -213,50 +217,34 @@ public class AppbaseTests {
 		String jsonDoc = "{doc: {\"price\": " + generatedPrice + "}}";
 		changeAll(jsonDoc);
 
-		String result = appbase.update(type, randomIds[0], null, jsonDoc);
-		JsonObject object = parser.parse(result).getAsJsonObject();
+		Response result = null;
+		try {
+			result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute().get();
+		} catch (InterruptedException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		} catch (ExecutionException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		System.out.println(result+"\n\n\n");
+		
+		JsonObject object = parser.parse(result.getResponseBody()).getAsJsonObject();
+		assertNotEquals(object.getAsJsonObject("_version").getAsInt(),1 );
 		assertEquals(object.getAsJsonObject("_shards").get("successful"),
 				object.getAsJsonObject("_shards").get("total"));
 		assertNotEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
 
-		result = appbase.update(type, randomIds[0], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.getAsJsonObject("_shards").get("successful"),
-				object.getAsJsonObject("_shards").get("total"));
-		assertEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
-
-		result = appbase.update(type, randomIds[1], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.getAsJsonObject("_shards").get("successful"),
-				object.getAsJsonObject("_shards").get("total"));
-		assertNotEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
-
-		result = appbase.update(type, randomIds[1], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.getAsJsonObject("_shards").get("successful"),
-				object.getAsJsonObject("_shards").get("total"));
-		assertEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
-
-		result = appbase.update(type, randomIds[2], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.getAsJsonObject("_shards").get("successful"),
-				object.getAsJsonObject("_shards").get("total"));
-		assertNotEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
-
-		result = appbase.update(type, randomIds[2], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.getAsJsonObject("_shards").get("successful"),
-				object.getAsJsonObject("_shards").get("total"));
-		assertEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
-
-		result = appbase.update(type, randomIds[3], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.getAsJsonObject("_shards").get("successful"),
-				object.getAsJsonObject("_shards").get("total"));
-		assertNotEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
-
-		result = appbase.update(type, randomIds[3], null, jsonDoc);
-		object = parser.parse(result).getAsJsonObject();
+		try {
+			result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute().get();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		object = parser.parse(result.getResponseBody()).getAsJsonObject();
 		assertEquals(object.getAsJsonObject("_shards").get("successful"),
 				object.getAsJsonObject("_shards").get("total"));
 		assertEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
@@ -310,9 +298,19 @@ public class AppbaseTests {
 	}
 
 	@Test
-	public void FgetTypesTest() {
-		String result = appbase.getTypes();
+	public void AAAFgetTypesTest() {
+		System.out.println(appbase.getTypes());
+		String result = appbase.getMappings();
+		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonObject object = parser.parse(result).getAsJsonObject();
+		String json = gson.toJson(object);
+//		System.out.println(json);
+		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject("jsfiddle-demo").getAsJsonObject("mappings").entrySet();//will return members of your object
+		JsonArray ret=new JsonArray();
+		for (Map.Entry<String, JsonElement> entry: entries) {
+			ret.add(entry.getKey());
+		}
+		System.out.println(ret.toString());
 		assertEquals(object.isJsonObject(), true);
 	}
 
