@@ -1,5 +1,0 @@
-package elasticsearchlibrary.handlers;
-
-public interface AppbaseHandler<T> {
-
-}
