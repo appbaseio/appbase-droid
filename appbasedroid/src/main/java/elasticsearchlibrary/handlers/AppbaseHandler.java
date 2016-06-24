@@ -9,6 +9,7 @@ import org.asynchttpclient.HttpResponseBodyPart;
 import org.asynchttpclient.HttpResponseHeaders;
 import org.asynchttpclient.HttpResponseStatus;
 import org.asynchttpclient.Response;
+import org.asynchttpclient.AsyncHandler.State;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -32,9 +33,14 @@ public class AppbaseHandler<T> implements AsyncHandler<T>  {
 		this.type = type;
 	}
 
-	/* (non-Javadoc)
-	 * @see elasticsearchlibrary.handlers.AppbaseHandler#onStatusReceived(org.asynchttpclient.HttpResponseStatus)
-	 */
+
+    /**
+     * Invoked as soon as the HTTP status line has been received
+     *
+     * @param responseStatus the status code and test of the response
+     * @return a {@link State} telling to CONTINUE or ABORT the current processing.
+     * @throws Exception if something wrong happens
+     */
 	public State onStatusReceived(HttpResponseStatus status) throws Exception {
 		if(Response.class==type){
 			builder.accumulate(status);
@@ -45,9 +51,15 @@ public class AppbaseHandler<T> implements AsyncHandler<T>  {
 		return State.CONTINUE;
 	}
 
-	/* (non-Javadoc)
-	 * @see elasticsearchlibrary.handlers.AppbaseHandler#onHeadersReceived(org.asynchttpclient.HttpResponseHeaders)
-	 */
+
+    /**
+     * Invoked as soon as the HTTP headers has been received. Can potentially be invoked more than once if a broken server
+     * sent trailing headers.
+     *
+     * @param headers the HTTP headers.
+     * @return a {@link State} telling to CONTINUE or ABORT the current processing.
+     * @throws Exception if something wrong happens
+     */
 	public State onHeadersReceived(HttpResponseHeaders arg0) throws Exception {
 		if(Response.class==type){
 			builder.accumulate(arg0);
@@ -55,9 +67,14 @@ public class AppbaseHandler<T> implements AsyncHandler<T>  {
 		return State.CONTINUE;
 	}
 
-	/* (non-Javadoc)
-	 * @see elasticsearchlibrary.handlers.AppbaseHandler#onCompleted()
-	 */
+    /**
+     * Invoked once the HTTP response processing is finished.
+     * <br>
+     * Gets always invoked as last callback method.
+     *
+     * @return T Value that will be returned by the associated {@link java.util.concurrent.Future}
+     * @throws Exception if something wrong happens
+     */
 	public T onCompleted() throws Exception {
 		if(type==Response.class){
 			return (T)builder.build();
@@ -67,9 +84,14 @@ public class AppbaseHandler<T> implements AsyncHandler<T>  {
 		}
 	}
 
-	/* (non-Javadoc)
-	 * @see elasticsearchlibrary.handlers.AppbaseHandler#onBodyPartReceived(org.asynchttpclient.HttpResponseBodyPart)
-	 */
+    /**
+     * Invoked as soon as some response body part are received. Could be invoked many times.
+     * Beware that, depending on the provider (Netty) this can be notified with empty body parts.
+     *
+     * @param bodyPart response's body part.
+     * @return a {@link State} telling to CONTINUE or ABORT the current processing. Aborting will also close the connection.
+     * @throws Exception if something wrong happens
+     */
 	@SuppressWarnings("unchecked")
 	public State onBodyPartReceived(HttpResponseBodyPart bodyPart) throws Exception {
 		halfBody += new String(bodyPart.getBodyPartBytes());
@@ -99,15 +121,21 @@ public class AppbaseHandler<T> implements AsyncHandler<T>  {
 	}
 
 
-	/* (non-Javadoc)
-	 * @see elasticsearchlibrary.handlers.AppbaseHandler#onThrowable(java.lang.Throwable)
-	 */
+    /**
+     * Invoked when an unexpected exception occurs during the processing of the response. The exception may have been
+     * produced by implementation of onXXXReceived method invocation.
+     *
+     * @param t a {@link Throwable}
+     */
 	public void onThrowable(Throwable arg0) {
 		System.out.println(arg0.getMessage());
 	}
 
-	/* (non-Javadoc)
-	 * @see elasticsearchlibrary.handlers.AppbaseHandler#formatResponse(com.google.gson.JsonObject)
+
+	/**
+	 * To format the received json to remove the data not required 
+	 * @param response The {@link JsonObject} to be formatted
+	 * @return formatted {@link JsonObject}
 	 */
 	public JsonObject formatResponse(JsonObject response) {
 		JsonObject formatted = new JsonObject();

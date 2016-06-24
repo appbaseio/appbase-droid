@@ -39,8 +39,13 @@ public class AppbaseTests {
 	static String randomId = null;
 	static String randomIds[] = null;
 	static AppbaseClient appbase;
-	static final String user = "7eJWHfD4P", pass = "431d9cea-5219-4dfb-b798-f897f3a02665", type = "product", id = "1",
-			URL = "http://scalr.api.appbase.io", appName = "jsfiddle-demo";
+	static final String 
+	user = "vspynv5Dg", pass = "f54091f5-ff77-4c71-a14c-1c29ab93fd15", 
+//			user = "7eJWHfD4P", pass = "431d9cea-5219-4dfb-b798-f897f3a02665", 
+			type = "product", id = "1",
+			URL = "http://scalr.api.appbase.io",
+			appName = "Trial1796";
+//	appName = "jsfiddle-demo";
 	static String jsonString = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
 	static Map<String, String> jsonMap;
 	static byte[] jsonBytes;
@@ -106,7 +111,7 @@ public class AppbaseTests {
 	}
 
 	@Test
-	public void AindexTest() {
+	public void AAAAAindexTest() {
 
 		/**
 		 * Index String result = appbase.index(type, id, jsonDoc); type and id
@@ -125,6 +130,7 @@ public class AppbaseTests {
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
+		System.out.println(result);
 		assertNotNull(result);
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		String created = object.get("created").getAsString();
@@ -208,10 +214,10 @@ public class AppbaseTests {
 
 		assertNotNull(created);
 		assertEquals("false", created);
+		for(;;){}
 
 	}
 
-	@Test
 	public void BupdateTest() {
 		int generatedPrice = 5;
 		String jsonDoc = "{doc: {\"price\": " + generatedPrice + "}}";
@@ -227,10 +233,10 @@ public class AppbaseTests {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		System.out.println(result+"\n\n\n");
-		
+		System.out.println(result + "\n\n\n");
+
 		JsonObject object = parser.parse(result.getResponseBody()).getAsJsonObject();
-		assertNotEquals(object.getAsJsonObject("_version").getAsInt(),1 );
+		assertNotEquals(object.getAsJsonObject("_version").getAsInt(), 1);
 		assertEquals(object.getAsJsonObject("_shards").get("successful"),
 				object.getAsJsonObject("_shards").get("total"));
 		assertNotEquals(object.getAsJsonObject("_shards").get("successful").getAsInt(), 0);
@@ -283,9 +289,9 @@ public class AppbaseTests {
 		object = parser.parse(result).getAsJsonObject();
 		assertEquals(object.get("found").getAsBoolean(), false);
 		appbase.index(result, randomIds[1], jsonString);
-		result=null;
+		result = null;
 		try {
-			result=appbase.prepareGet(type, randomIds[1]).execute().get().getResponseBody();
+			result = appbase.prepareGet(type, randomIds[1]).execute().get().getResponseBody();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -293,7 +299,6 @@ public class AppbaseTests {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 
 	}
 
@@ -304,10 +309,12 @@ public class AppbaseTests {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		String json = gson.toJson(object);
-//		System.out.println(json);
-		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject("jsfiddle-demo").getAsJsonObject("mappings").entrySet();//will return members of your object
-		JsonArray ret=new JsonArray();
-		for (Map.Entry<String, JsonElement> entry: entries) {
+		// System.out.println(json);
+		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject("jsfiddle-demo")
+				.getAsJsonObject("mappings").entrySet();// will return members
+														// of your object
+		JsonArray ret = new JsonArray();
+		for (Map.Entry<String, JsonElement> entry : entries) {
 			ret.add(entry.getKey());
 		}
 		System.out.println(ret.toString());
@@ -385,7 +392,21 @@ public class AppbaseTests {
 	}
 
 	@Test
-	public void JsearchStreamToURLTest() {
+	public void AAAAAAAJsearchStreamToURLTest() {
+		System.out.println("AAAAAAA");
+		try {
+			Response r=appbase.searchStreamToURL(type, "{\"query\":{\"term\":{ \"price\" : 5595}}}",
+					"{ \"webhooks\": [  {   \"url\": \"http://requestb.in/1e5e7bn1\"  } ], \"query\": {  \"match_all\": {} }, \"type\": [  \"tweet\" ]}").get();
+				System.out.println(r.getResponseBody());
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("AAAAAAA");
+
 	}
 
 	public void testIndex() {

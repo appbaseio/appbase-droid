@@ -41,19 +41,11 @@ public class AppbaseRequestBuilder {
 	BoundRequestBuilder request;
 
 	public AppbaseRequestBuilder(BoundRequestBuilder request) {
-		super();
 		this.request = request;
 	}
 
 	public <T> ListenableFuture<T> execute(AsyncHandler<T> handler) {
 		ListenableFuture<T> a=request.execute(handler);
-		try {
-			System.out.println(a.get());
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
 		return  a;
 	}
 
