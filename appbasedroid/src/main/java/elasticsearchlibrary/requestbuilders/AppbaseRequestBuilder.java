@@ -8,7 +8,6 @@ import java.nio.charset.Charset;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 import org.asynchttpclient.AsyncHandler;
 import org.asynchttpclient.BoundRequestBuilder;
@@ -32,7 +31,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
-import elasticsearchlibrary.handlers.AppbaseHandler;
 import io.netty.handler.codec.http.HttpHeaders;
 import io.netty.resolver.NameResolver;
 

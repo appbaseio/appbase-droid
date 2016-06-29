@@ -75,6 +75,7 @@ public class AppbaseHandler<T> implements AsyncHandler<T>  {
      * @return T Value that will be returned by the associated {@link java.util.concurrent.Future}
      * @throws Exception if something wrong happens
      */
+	@SuppressWarnings("unchecked")
 	public T onCompleted() throws Exception {
 		if(type==Response.class){
 			return (T)builder.build();

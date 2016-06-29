@@ -41,11 +41,9 @@ public class AppbaseTests {
 	static AppbaseClient appbase;
 	static final String 
 	user = "vspynv5Dg", pass = "f54091f5-ff77-4c71-a14c-1c29ab93fd15", 
-//			user = "7eJWHfD4P", pass = "431d9cea-5219-4dfb-b798-f897f3a02665", 
 			type = "product", id = "1",
 			URL = "http://scalr.api.appbase.io",
 			appName = "Trial1796";
-//	appName = "jsfiddle-demo";
 	static String jsonString = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
 	static Map<String, String> jsonMap;
 	static byte[] jsonBytes;
@@ -111,7 +109,7 @@ public class AppbaseTests {
 	}
 
 	@Test
-	public void AAAAAindexTest() {
+	public void AindexTest() {
 
 		/**
 		 * Index String result = appbase.index(type, id, jsonDoc); type and id
@@ -120,8 +118,6 @@ public class AppbaseTests {
 		 *
 		 */
 
-		// There will be tests for checking index for a new object and for one
-		// which already exists
 		String result = null;
 		try {
 			result = appbase.prepareIndex(type, randomIds[0], jsonString).execute().get().getResponseBody();
@@ -138,14 +134,6 @@ public class AppbaseTests {
 		assertNotNull(created);
 		assertEquals("true", created);
 
-		result = appbase.index(type, randomIds[0], jsonString);
-		assertNotNull(result);
-		object = parser.parse(result).getAsJsonObject();
-		created = object.get("created").getAsString();
-
-		assertNotNull(created);
-		assertEquals("false", created);
-
 		result = null;
 		try {
 			result = appbase.prepareIndex(type, randomIds[1], jsonMap).execute().get().getResponseBody();
@@ -160,14 +148,6 @@ public class AppbaseTests {
 
 		assertNotNull(created);
 		assertEquals("true", created);
-
-		result = appbase.index(type, randomIds[1], jsonMap);
-		assertNotNull(result);
-		object = parser.parse(result).getAsJsonObject();
-		created = object.get("created").getAsString();
-
-		assertNotNull(created);
-		assertEquals("false", created);
 
 		result = null;
 		try {
@@ -184,14 +164,6 @@ public class AppbaseTests {
 		assertNotNull(created);
 		assertEquals("true", created);
 
-		result = appbase.index(type, randomIds[2], jsonObject);
-		assertNotNull(result);
-		object = parser.parse(result).getAsJsonObject();
-		created = object.get("created").getAsString();
-
-		assertNotNull(created);
-		assertEquals("false", created);
-
 		result = null;
 		try {
 			result = appbase.prepareIndex(type, randomIds[3], jsonBytes).execute().get().getResponseBody();
@@ -207,14 +179,6 @@ public class AppbaseTests {
 		assertNotNull(created);
 		assertEquals("true", created);
 
-		result = appbase.index(type, randomIds[3], jsonBytes);
-		assertNotNull(result);
-		object = parser.parse(result).getAsJsonObject();
-		created = object.get("created").getAsString();
-
-		assertNotNull(created);
-		assertEquals("false", created);
-		for(;;){}
 
 	}
 
@@ -227,10 +191,8 @@ public class AppbaseTests {
 		try {
 			result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute().get();
 		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (ExecutionException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		System.out.println(result + "\n\n\n");
@@ -244,10 +206,8 @@ public class AppbaseTests {
 		try {
 			result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute().get();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		object = parser.parse(result.getResponseBody()).getAsJsonObject();
@@ -259,12 +219,25 @@ public class AppbaseTests {
 
 	@Test
 	public void CdeleteTest() {
-		String result = appbase.delete(type, randomIds[0]);
+		String result = null;
+		try {
+			result = appbase.prepareDelete(type, randomIds[0]).execute().get().getResponseBody();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		assertEquals(object.get("found").getAsBoolean(), true);
 		assertEquals(object.getAsJsonObject("_shards").get("failed").getAsInt(), 0);
 
-		result = appbase.delete(type, randomIds[0]);
+		try {
+			result = appbase.prepareDelete(type, randomIds[0]).execute().get().getResponseBody();
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			e.printStackTrace();
+		}
 		object = parser.parse(result).getAsJsonObject();
 		assertEquals(object.get("found").getAsBoolean(), false);
 		assertEquals(object.getAsJsonObject("_shards").get("failed").getAsInt(), 0);
@@ -277,29 +250,13 @@ public class AppbaseTests {
 		try {
 			result = appbase.prepareGet(type, randomIds[1]).execute(new AppbaseHandler<String>(String.class)).get();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		JsonObject object = parser.parse(result).getAsJsonObject();
-		result = appbase.delete(type, randomIds[1]);
-		result = appbase.get(type, randomIds[1]);
 		object = parser.parse(result).getAsJsonObject();
 		assertEquals(object.get("found").getAsBoolean(), false);
-		appbase.index(result, randomIds[1], jsonString);
-		result = null;
-		try {
-			result = appbase.prepareGet(type, randomIds[1]).execute().get().getResponseBody();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
 	}
 
 	@Test
@@ -309,7 +266,6 @@ public class AppbaseTests {
 		Gson gson = new GsonBuilder().setPrettyPrinting().create();
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		String json = gson.toJson(object);
-		// System.out.println(json);
 		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject("jsfiddle-demo")
 				.getAsJsonObject("mappings").entrySet();// will return members
 														// of your object
@@ -329,10 +285,8 @@ public class AppbaseTests {
 		try {
 			result = appbase.prepareSearch(type).setBody(body).execute().get().getResponseBody();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		JsonObject object = parser.parse(result).getAsJsonObject();
@@ -340,7 +294,15 @@ public class AppbaseTests {
 		assertNotEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
 		generatedPrice = 5595;
 		body = "{\"query\":{\"term\":{ \"price\" : " + generatedPrice + "}}}";
-		result = appbase.search(type, body);
+		try {
+			result = appbase.prepareSearch(type).setBody(body).execute().get().getResponseBody();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		object = parser.parse(result).getAsJsonObject();
 		assertEquals(object.isJsonObject(), true);
 		assertNotEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
@@ -348,7 +310,7 @@ public class AppbaseTests {
 	}
 
 	public void AAHgetStreamTest() {
-		appbase.index(type, randomId, jsonString);
+		appbase.prepareIndex(type, randomId, jsonString).execute();
 		appbase.getStream(type, randomId, new AppbaseStreamHandler<String>(String.class) {
 			int i = 1;
 
@@ -361,7 +323,7 @@ public class AppbaseTests {
 			public org.asynchttpclient.AsyncHandler.State onBodyPartReceived(HttpResponseBodyPart bodyPart)
 					throws Exception {
 				if (i == 1) {
-					appbase.update(type, randomId, null, "{doc: {\"price\": " + 2 + "}}");
+					appbase.prepareUpdate(type, randomId, null, "{doc: {\"price\": " + 2 + "}}").execute();
 					i++;
 				} else if (i > 1) {
 					String result = new String(bodyPart.getBodyPartBytes());
@@ -395,8 +357,8 @@ public class AppbaseTests {
 	public void AAAAAAAJsearchStreamToURLTest() {
 		System.out.println("AAAAAAA");
 		try {
-			Response r=appbase.searchStreamToURL(type, "{\"query\":{\"term\":{ \"price\" : 5595}}}",
-					"{ \"webhooks\": [  {   \"url\": \"http://requestb.in/1e5e7bn1\"  } ], \"query\": {  \"match_all\": {} }, \"type\": [  \"tweet\" ]}").get();
+			Response r=appbase.prepareSearchStreamToURL(type, "{\"query\":{\"term\":{ \"price\" : 5595}}}",
+					"{ \"webhooks\": [  {   \"url\": \"http://requestb.in/1e5e7bn1\"  } ], \"query\": {  \"match_all\": {} }, \"type\": [  \"tweet\" ]}").execute().get();
 				System.out.println(r.getResponseBody());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

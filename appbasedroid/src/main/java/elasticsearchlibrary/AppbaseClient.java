@@ -61,7 +61,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		this.userName = userName;
 		this.app = app;
 		constructURL();
-		Param stream = new Param("stream", "true");
+		Param stream = new Param("streamonly", "true");
 		getParameters().add(stream);
 
 	}
@@ -233,95 +233,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	// searchStreamToURL()
 
 	/**
-	 * Indexes the object to return the result of the index.
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-	public String index(String type, String id, String jsonDoc) {
-		ListenableFuture<Response> f = prepareIndex(type, id, jsonDoc).execute();
-		try {
-			Response r = f.get();
-			return r.getResponseBody();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	/**
-	 * Indexes the object to return the result of the index.
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-	public String index(String type, String id, byte[] jsonDoc) {
-		return index(type, id, new String(jsonDoc));
-	}
-
-	/**
-	 * Indexes the object to return the result of the index.
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-	public String index(String type, String id, JsonObject jsonDoc) {
-		return index(type, id, jsonDoc.toString());
-	}
-
-	/**
-	 * Indexes the object to return the result of the index.
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the request body
-	 */
-	public String index(String type, String id, Map jsonDoc) {
-		Gson gson = new GsonBuilder().create();
-		String json = gson.toJson(jsonDoc);
-		return index(type, id, json);
-	}
-
-	/**
-	 * Index a document without providing the id. Id will be automatically
-	 * created.
-	 * 
-	 * @param type
-	 *            type of the object
-	 * @param jsonDoc
-	 *            the object to be indexed
-	 * @return an object of the ListenableFuture which contains the Response of
-	 *         the operation;
-	 */
-	public ListenableFuture<Response> index(String type, String jsonDoc) {
-		return prepareIndex(type, jsonDoc).execute();
-	}
-
-	/**
 	 * Prepare the request for indexing a document without providing the id. Id
 	 * will be automatically created.
 	 * 
@@ -459,101 +370,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	/**
-	 * To update a document. We can pass just the portion of the object to be
-	 * updated. parameters is a list of parameters which are the name value
-	 * pairs which will be added during the execution
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param parameters
-	 *            A list of all the parameters for a specific update
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-
-	public String update(String type, String id, List<Param> parameters, String jsonDoc) {
-		ListenableFuture<Response> f = prepareUpdate(type, id, parameters, jsonDoc).execute();
-		try {
-			Response r = f.get();
-			return r.getResponseBody();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	/**
-	 * To update a document. We can pass just the portion of the object to be
-	 * updated. parameters is a list of parameters which are the name value
-	 * pairs which will be added during the execution
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param parameters
-	 *            A list of all the parameters for a specific update
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-
-	public String update(String type, String id, List<Param> parameters, byte[] jsonDoc) {
-		return update(type, id, parameters, new String(jsonDoc));
-	}
-
-	/**
-	 * To update a document. We can pass just the portion of the object to be
-	 * updated. parameters is a list of parameters which are the name value
-	 * pairs which will be added during the execution
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param parameters
-	 *            A list of all the parameters for a specific update
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-
-	public String update(String type, String id, List<Param> parameters, JsonObject jsonDoc) {
-		return update(type, id, parameters, jsonDoc.toString());
-	}
-
-	/**
-	 * To update a document. We can pass just the portion of the object to be
-	 * updated. parameters is a list of parameters which are the name value
-	 * pairs which will be added during the execution
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @param parameters
-	 *            A list of all the parameters for a specific update
-	 * @param jsonDoc
-	 *            the String which is the JSON for the object to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-
-	public String update(String type, String id, List<Param> parameters, Map<String, Object> jsonDoc) {
-		Gson gson = new GsonBuilder().create();
-		String json = gson.toJson(jsonDoc);
-		return update(type, id, parameters, json);
-	}
-
-	/**
 	 * To prepare a {@link AppbaseRequestBuilder} object to update a document.
 	 * We can pass just the portion of the object to be updated. parameters is a
 	 * list of parameters which are the name value pairs which will be added
@@ -653,30 +469,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	/**
-	 * To delete a document.
-	 * 
-	 * @param type
-	 *            the type of the object
-	 * @param id
-	 *            the id at which it need to be inserted
-	 * @return the result after the operation. It contains the details of the
-	 *         operations execution.
-	 */
-	public String delete(String type, String id) {
-		ListenableFuture<Response> f = prepareDelete(type, id).execute();
-		try {
-			Response r = f.get();
-			return r.getResponseBody();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
-
-	}
-
-	/**
 	 * To prepare an {@link AppbaseRequestBuilder} object to delete a document.
 	 * 
 	 * @param type
@@ -704,6 +496,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 * @return Array of the listenable futures containing the responses of
 	 *         individual requests
 	 */
+	@SuppressWarnings("unchecked")
 	public ListenableFuture<Response>[] bulkExecute(AppbaseRequestBuilder[] requestBuilders) {
 		ListenableFuture<Response>[] response = new ListenableFuture[requestBuilders.length];
 		for (int i = 0; i < requestBuilders.length; i++) {
@@ -721,35 +514,13 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 * @return Array of the listenable futures containing the responses of
 	 *         individual requests
 	 */
+	@SuppressWarnings("unchecked")
 	public ListenableFuture<Response>[] bulkExecute(ArrayList<AppbaseRequestBuilder> requestBuilders) {
 		ListenableFuture<Response>[] response = new ListenableFuture[requestBuilders.size()];
 		for (int i = 0; i < requestBuilders.size(); i++) {
 			response[i] = (requestBuilders.get(i).execute());
 		}
 		return response;
-	}
-
-	/**
-	 * 
-	 * Get the indexed objects by specifying type and id
-	 * 
-	 * @param type
-	 *            type of the required object
-	 * @param id
-	 *            id of the required object
-	 * @return the json String of the required object
-	 */
-
-	public String get(String type, String id) {
-		ListenableFuture<Response> f = super.prepareGet(getURL(type, id)).execute();
-		try {
-			return f.get().getResponseBody();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 
 	/**
@@ -824,29 +595,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 				ret.add(entry.getKey());
 		}
 		return ret.toString();
-	}
-
-	/**
-	 * Search by passing the query body
-	 * 
-	 * @param type
-	 *            type in which the search must take place
-	 * @param body
-	 *            the query body (example: {"query":{"term":{ "price" : 5595}}}
-	 *            )
-	 * @return returns the search result corresponding to the query
-	 */
-
-	public String search(String type, String body) {
-		ListenableFuture<Response> f = prepareSearch(type, body).execute();
-		try {
-			return f.get().getResponseBody();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
 	}
 
 	/**
@@ -969,29 +717,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	}
 
 	/**
-	 * Search by passing the query as a List of param objects. This will be
-	 * added like query parameters not in the body.
-	 * 
-	 * @param type
-	 *            type in which the search must take place
-	 * @param body
-	 *            List of Parameter objects which
-	 * @return returns the search result corresponding to the query
-	 */
-
-	public String search(String type, java.util.List<Param> parameters) {
-		ListenableFuture<Response> f = prepareSearch(type, parameters).execute();
-		try {
-			return f.get().getResponseBody();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		} catch (ExecutionException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	/**
 	 * Prepare an {@link AppbaseRequestBuilder} object to search by passing the
 	 * query as a List of param objects. This will be added like query
 	 * parameters not in the body.
@@ -1026,7 +751,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            An {@link AppbaseStreamHandler} object which specifies what to
 	 *            do with the received data.
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void getStream(String type, String id, AppbaseStreamHandler appbaseHandler) {
 		if (userName != null)
 			super.prepareGet(getURL(type, id)).addHeader("Authorization", "Basic " + getAuth())
@@ -1089,7 +814,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            do with the received data.
 	 */
 
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void searchStream(String type, String body, AppbaseStreamHandler asyncHandler) {
 		super.prepareGet(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).setBody(body).addQueryParams(getParameters()).execute(asyncHandler);
@@ -1111,7 +836,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            do with the received data.
 	 */
 	@SuppressWarnings("unchecked")
-	public void searchStream(String type, QueryBuilder body, AppbaseStreamHandler asyncHandler) {
+	public void searchStream(String type, QueryBuilder body, @SuppressWarnings("rawtypes") AppbaseStreamHandler asyncHandler) {
 		super.prepareGet(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).setBody(body.toString()).addQueryParams(getParameters())
 				.execute(asyncHandler);
@@ -1132,7 +857,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            An {@link AppbaseStreamHandler} object which specifies what to
 	 *            do with the received data.
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void searchStream(String[] type, String body, AppbaseStreamHandler asyncHandler) {
 		super.prepareGet(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).setBody(body).addQueryParams(getParameters()).execute(asyncHandler);
@@ -1152,7 +877,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            An {@link AppbaseStreamHandler} object which specifies what to
 	 *            do with the received data.
 	 */
-	@SuppressWarnings("unchecked")
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	public void searchStream(String[] type, QueryBuilder body, AppbaseStreamHandler asyncHandler) {
 		super.prepareGet(getURL(type) + SEPARATOR + "_search").addHeader("Authorization", "Basic " + getAuth())
 				.setRequestTimeout(60000000).setBody(body.toString()).addQueryParams(getParameters())
@@ -1224,30 +949,6 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		return new AppbaseRequestBuilder(
 				super.prepareGet(getURL(type) + SEPARATOR + "_search").setRequestTimeout(60000000)
 						.addHeader("Authorization", "Basic " + getAuth()).addQueryParams(getParameters()));
-	}
-
-	/**
-	 * This method indexes the search request for it to be streamed to the
-	 * provided URL
-	 * 
-	 * @param type
-	 *            type in which the search must take place
-	 * @param query
-	 * @param webhook
-	 * @return
-	 */
-	public ListenableFuture<Response> searchStreamToURL(String type, String query, String webhook) {
-		JsonParser parser = new JsonParser();
-		JsonObject object = parser.parse(query).getAsJsonObject();
-		JsonObject o = parser.parse(webhook).getAsJsonObject();
-		object.add("webhooks", o.get("webhooks"));
-		JsonArray arr = new JsonArray();
-		arr.add(type);
-		object.add("type", arr);
-		System.out.println(object.toString());
-		String path = ".percolator/webhooks-0-" + type + "-0-" + UUID.randomUUID();
-		System.out.println(path);
-		return prepareIndex(path, object).execute();
 	}
 
 	/**
