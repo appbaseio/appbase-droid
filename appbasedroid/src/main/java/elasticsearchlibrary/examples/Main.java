@@ -16,28 +16,22 @@ import elasticsearchlibrary.handlers.AppbaseStreamHandler;
 public class Main {
 	static JsonParser parser;
 	static AppbaseClient appbase;
-	static final String user = "7eJWHfD4P",
-			pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
-			URL = "http://scalr.api.appbase.io",
-			appName = "jsfiddle-demo",
+	static final String user = "7eJWHfD4P", pass = "431d9cea-5219-4dfb-b798-f897f3a02665",
+			URL = "http://scalr.api.appbase.io", appName = "jsfiddle-demo",
 			jsonDoc = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
 
 	static String type = "product", id = "1";
+
 	public static void main(String[] args) {
 
-		QueryBuilder a=QueryBuilders.fuzzyQuery(type, id);
-		System.out.println(a.toString());
-		String URL="http://scalr.api.appbase.io", app="Trial1796",
-				  user="vspynv5Dg", pass="f54091f5-ff77-4c71-a14c-1c29ab93fd15";
+		String URL = "http://scalr.api.appbase.io", app = "Trial1796", user = "vspynv5Dg",
+				pass = "f54091f5-ff77-4c71-a14c-1c29ab93fd15";
 		appbase = new AppbaseClient(URL, app, user, pass);
-		appbase.getStream(type, id, new AppbaseStreamHandler<JsonObject>(JsonObject.class) {
-			@Override
-			public void onData(JsonObject data) {
-				System.out.println(data);
-			}
+		r();
+	}
 
-		});
-		System.out.println("out of async");
+	public static void r() {
 		
 	}
+
 }

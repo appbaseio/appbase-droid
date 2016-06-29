@@ -26,10 +26,15 @@ To index you can simply do
 ```java
 String result = appbase.index(type, randomId, jsonDoc);
 ```
-You can also do 
+You can also do
 ```java
 ListenableFuture<Response> f = prepareIndex(type, id, jsonDoc).execute();
+//to get ResponseBody in String user
+String response= f.get().getResponseBody();
 ```
+
+jsonDoc can be of either String, byte[], Map or JsonObject (GSON).
+
 **Update**
 To update the document
 ```java
@@ -76,21 +81,17 @@ appbase.getStream(type, randomId, new AppbaseHandler(false) {
 ```
 **SearchStream**
 ```java
-appbase.searchStream(type,
-	"{\"query\":{\"term\":{ \"price\" : 5595}}}",
-	new AppbaseHandler(false) {
-		int i = 1;
-		String generatedId;
-		@Override
-		public void onData(String data) {
-			System.out.println(data);
-		}
-	}
-);
+appbase.searchStream(type, query , new AppbaseStreamHandler<String>(String.class){
+				@Override
+				public void onData(String data) {
+					System.out.println(data);
+				}
+
+});
 ```
 
 **Get as JSON**
-To get any result as JsonObject use
+To get any result as JsonObject (GSON) use
 ```java
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
@@ -98,4 +99,3 @@ import com.google.gson.JsonParser;
 JsonParser parser = new JsonParser();
 JsonObject object = parser.parse(result).getAsJsonObject();
 ```
-

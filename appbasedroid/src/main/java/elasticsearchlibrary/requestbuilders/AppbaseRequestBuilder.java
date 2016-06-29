@@ -39,12 +39,12 @@ public class AppbaseRequestBuilder {
 	BoundRequestBuilder request;
 
 	public AppbaseRequestBuilder(BoundRequestBuilder request) {
-		super();
 		this.request = request;
 	}
 
 	public <T> ListenableFuture<T> execute(AsyncHandler<T> handler) {
-		return request.execute(handler);
+		ListenableFuture<T> a=request.execute(handler);
+		return  a;
 	}
 
 	public int hashCode() {
