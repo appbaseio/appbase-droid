@@ -11,6 +11,7 @@ import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
 import org.asynchttpclient.DefaultAsyncHttpClient;
+import org.asynchttpclient.DefaultAsyncHttpClientConfig;
 import org.asynchttpclient.ListenableFuture;
 import org.asynchttpclient.Param;
 import org.asynchttpclient.Response;
@@ -26,6 +27,8 @@ import com.google.gson.JsonParser;
 
 import elasticsearchlibrary.handlers.AppbaseStreamHandler;
 import elasticsearchlibrary.requestbuilders.AppbaseRequestBuilder;
+import io.netty.handler.ssl.SslContext;
+import elasticsearchlibrary.examples.Main;
 import elasticsearchlibrary.handlers.AppbasePipedStreamHandler;
 
 
@@ -56,6 +59,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 * 
 	 */
 	public AppbaseClient(String URL, String app, String userName, String password) {
+		super(new DefaultAsyncHttpClientConfig.Builder().setAcceptAnyCertificate(true).build());
 		this.baseURL = URL;
 		this.password = password;
 		this.userName = userName;
@@ -63,6 +67,7 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 		constructURL();
 		Param stream = new Param("streamonly", "true");
 		getParameters().add(stream);
+		
 
 	}
 
@@ -76,15 +81,70 @@ public class AppbaseClient extends DefaultAsyncHttpClient {
 	 *            application name (example: "myFirstApp")
 	 */
 	public AppbaseClient(String URL, String app) {
-
+		super(new DefaultAsyncHttpClientConfig.Builder().setAcceptAnyCertificate(true).build());
 		this.baseURL = URL;
 		this.password = null;
 		this.userName = null;
 		this.app = app;
-		constructURL();
 		Param stream = new Param("stream", "true");
 		getParameters().add(stream);
+		setAuth(URL);
 
+		constructURL();
+	}
+	private void setAuth(String URL){
+		int subEnd=0;
+		if(URL.contains("http://")){
+			if(URL.contains("@")){
+				int passwordStarted=0;
+				for (int i = 7; i < URL.length(); i++) {
+					
+					if(URL.charAt(i)==':'){
+						this.userName=URL.substring(7,i);
+						passwordStarted=i;
+					}
+					if(passwordStarted!=0){
+						if(URL.charAt(i)=='@'){
+							this.password=URL.substring(passwordStarted+1,i);
+							subEnd=i+1;
+						}
+					}
+					
+				}
+				this.URL=URL.substring(0,7)+URL.substring(subEnd);
+				System.out.println(this.URL);
+				System.out.println(userName);
+				System.out.println(password);
+			}
+		}else if(URL.contains("https://")){
+			if(URL.contains("@")){
+				int passwordStarted=0;
+				for (int i = 8; i < URL.length(); i++) {
+					
+					if(URL.charAt(i)==':'){
+						this.userName=URL.substring(8,i);
+						passwordStarted=i;
+					}
+					if(passwordStarted!=0){
+						if(URL.charAt(i)=='@'){
+							this.password=URL.substring(passwordStarted+1,i);
+							subEnd=i+1;
+						}
+					}
+					
+				}
+				this.URL=URL.substring(0,8)+URL.substring(subEnd);
+				System.out.println(this.URL);
+				System.out.println(userName);
+				System.out.println(password);
+			}
+		}
+
+
+		if(userName!=null&&this.password==null){
+			userName=null;
+		}
+		
 	}
 
 	// Getters
