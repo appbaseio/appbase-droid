@@ -30,12 +30,10 @@ public class Main {
 		System.out.println("https://"+user+":"+pass+"@scalr.api.appbase.io");
 		appbase=new AppbaseClient("https://"+user+":"+pass+"@scalr.api.appbase.io", "jsfiddle-demo");
 		try {
-			System.out.println(appbase.prepareIndex(type, "1",jsonDoc).execute().get().getResponseBody());
+			System.out.println(appbase.prepareIndex(type,jsonDoc).execute().get().getResponseBody());
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (ExecutionException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		appbase.close();
@@ -44,10 +42,8 @@ public class Main {
 //		try {
 //			r = a.preparePut(URL+"/"+appName+"/"+type+"/45").addHeader("Authorization", "Basic " + getAuth()).setBody(jsonDoc).execute().get().getResponseBody();
 //		} catch (InterruptedException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		} catch (ExecutionException e) {
-//			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
 //		System.out.println(r);
