@@ -17,7 +17,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonSyntaxException;
 
-import client.AppbaseClient;
+import io.appbase.client.AppbaseClient;
 import okhttp3.Response;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
