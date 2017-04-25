@@ -21,7 +21,7 @@ import io.appbase.client.AppbaseClient;
 import okhttp3.Response;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class AppbaseTests {
+public class AppbaseTest {
 	static JsonParser parser;
 	static String randomId = null;
 	static String randomIds[] = null;
