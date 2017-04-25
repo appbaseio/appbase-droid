@@ -53,7 +53,6 @@ public class AppbaseTests {
 		}
 		String[] arr = new String[k];
 		for (int i = 0; i < arr.length; i++) {
-
 			int n = r.nextInt(5) + 5;
 			arr[i] = "";
 			for (int j = 0; j < n + 1; j++) {
@@ -319,29 +318,5 @@ public class AppbaseTests {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	public void testSearch() {
-		String user = "7eJWHfD4P", pass = "431d9cea-5219-4dfb-b798-f897f3a02665", URL = "http://scalr.api.appbase.io",
-				appName = "jsfiddle-demo";
-
-		appbase = new AppbaseClient(URL, appName, user, pass);
-
-		// Search 1
-
-		String body = "{\"query\":{\"term\":{ \"price\" : 5595}}}";
-		Response response = appbase.prepareSearch(type, body).addHeader("any", "header")
-				.addQueryParam("set", "parameter").execute();
-
-		Response r = response;
-		String a = null;
-		try {
-			a = r.body().string();
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-		System.out.println(a);
-
 	}
 }

@@ -56,7 +56,18 @@
 			<version>4.12</version>
 			<scope>test</scope>
 		</dependency>
+		<!-- <dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<version>2.4.4</version>
+		</dependency>
+
+ -->
 	</dependencies>
+
+
+
+
 	<distributionManagement>
 		<snapshotRepository>
 			<id>ossrh</id>
@@ -113,19 +124,13 @@
 						<goals>
 							<goal>sign</goal>
 						</goals>
+
+						<configuration>
+							<keyname>${gpg.keyname}</keyname>
+							<passphraseServerId>${gpg.keyname}</passphraseServerId>
+						</configuration>
 					</execution>
 				</executions>
-			</plugin>
-			<plugin>
-				<groupId>org.sonatype.plugins</groupId>
-				<artifactId>nexus-staging-maven-plugin</artifactId>
-				<version>1.6.7</version>
-				<extensions>true</extensions>
-				<configuration>
-					<serverId>ossrh</serverId>
-					<nexusUrl>https://oss.sonatype.org/</nexusUrl>
-					<autoReleaseAfterClose>true</autoReleaseAfterClose>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
