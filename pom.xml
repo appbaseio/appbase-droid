@@ -76,7 +76,7 @@
 	</distributionManagement>
 	<build>
 		<plugins>
-			<plugin>
+			<!--plugin>
 				<groupId>org.sonatype.plugins</groupId>
 				<artifactId>nexus-staging-maven-plugin</artifactId>
 				<version>1.6.7</version>
@@ -131,7 +131,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin-->
 		</plugins>
 	</build>
 </project>
