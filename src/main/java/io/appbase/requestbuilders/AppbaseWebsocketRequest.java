@@ -21,13 +21,13 @@ public class AppbaseWebsocketRequest {
 	}
 
 	private void changeURL() {
-		System.out.println(baseURL.charAt(4));
-		if (baseURL.charAt(4) == 's') {
+		if (baseURL.startsWith("https://")) {
 			baseURL = "wss" + baseURL.substring(5);
-		} else {
+		} else if(baseURL.startsWith("http://")) {
 			baseURL = "ws" + baseURL.substring(4);
+		} else {
+			baseURL = "ws://" + baseURL;
 		}
-		System.out.println(baseURL);
 	}
 
 	/**
@@ -46,7 +46,6 @@ public class AppbaseWebsocketRequest {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-		System.out.println(uri.toString());
 		AppbaseWebsocketClient client = null;
 		try {
 			client = new AppbaseWebsocketClient(uri, appbaseOnMessage);

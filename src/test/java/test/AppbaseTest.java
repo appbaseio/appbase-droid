@@ -29,11 +29,10 @@ public class AppbaseTest {
 	static final String user = "vspynv5Dg", pass = "f54091f5-ff77-4c71-a14c-1c29ab93fd15", type = "product", id = "1",
 			URL = "http://scalr.api.appbase.io", appName = "Trial1796";
 	static String jsonString = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
-	
+
 	static byte[] jsonBytes;
 	static JsonObject jsonObject;
 	static Random r;
-
 
 	public static String generateId() {
 		if (r == null) {
@@ -104,7 +103,6 @@ public class AppbaseTest {
 			e.printStackTrace();
 		}
 
-		System.out.println(result);
 		assertNotNull(result);
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		String created = object.get("created").getAsString();
@@ -155,8 +153,6 @@ public class AppbaseTest {
 		Response result = null;
 
 		result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute();
-		
-		System.out.println(result + "\n\n\n");
 
 		JsonObject object = null;
 		try {
@@ -168,7 +164,7 @@ public class AppbaseTest {
 
 			e.printStackTrace();
 		}
-		
+
 		assertNotEquals(object.get("_version").getAsInt(), 1);
 		assertEquals(object.getAsJsonObject("_shards").get("successful"),
 				object.getAsJsonObject("_shards").get("total"));
@@ -238,17 +234,15 @@ public class AppbaseTest {
 
 	@Test
 	public void FgetTypesTest() {
-		System.out.println(appbase.getTypes());
 		String result = appbase.getMappings();
 		JsonObject object = parser.parse(result).getAsJsonObject();
-		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject(appName)
-				.getAsJsonObject("mappings").entrySet();// will return members
-														// of your object
+		Set<Map.Entry<String, JsonElement>> entries = object.getAsJsonObject(appName).getAsJsonObject("mappings")
+				.entrySet();// will return members
+							// of your object
 		JsonArray ret = new JsonArray();
 		for (Map.Entry<String, JsonElement> entry : entries) {
 			ret.add(entry.getKey());
 		}
-		System.out.println(ret.toString());
 		assertEquals(object.isJsonObject(), true);
 	}
 
@@ -285,10 +279,8 @@ public class AppbaseTest {
 
 	}
 
-	// @Test
-	public void AAAAAAAJsearchStreamToURLTest() {
-		System.out.println("AAAAAAA");
-
+	@Test
+	public void searchStreamToURLTest() {
 		Response r = appbase
 				.prepareSearchStreamToURL(type, "{\"query\":{\"term\":{ \"price\" : 5595}}}",
 						"{ \"webhooks\": [  {   \"url\": \"http://requestb.in/1e5e7bn1\"  } ], \"query\": {  \"match_all\": {} }, \"type\": [  \"tweet\" ]}")

@@ -19,30 +19,4 @@ public class AppbaseBasicTest {
 	public void setup() {
 		appbase = new AppbaseClient(URL,appName,user,pass);
 	}
-//
-//	@Test
-//	public void getURLTest() {
-//		String result=appbase.getURL(type);
-//		assertNotNull(result);
-//		assertEquals("http://scalr.api.appbase.io/Trial1796/product", result);
-//		
-//		result=appbase.getURL(type, id);
-//		assertNotNull(result);
-//		assertEquals("http://scalr.api.appbase.io/Trial1796/product/1", result);
-//	}
-//	
-//	@Test
-//	public void getSearchURLTest(){
-//		String result=appbase.getSearchUrl("abc");
-//		assertNotNull(result);
-//		assertEquals("http://scalr.api.appbase.io/Trial1796/_search?q=abc", result);
-//		
-//		result=appbase.getSearchUrl("product", "abc");
-//		assertNotNull(result);
-//		assertEquals("http://scalr.api.appbase.io/Trial1796/product/_search?q=abc", result);
-//	}
-//	
-//	
-//	
-
 }
