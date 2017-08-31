@@ -48,7 +48,7 @@ public class AppbaseBullkBuilder {
 			JsonObject j = new JsonObject();
 			curr = req.get(i);
 			if (curr == null) {
-				System.err.println("null AppbaseRequestBuilderObject at possition" + i);
+				System.err.println("null AppbaseRequestBuilder object at position " + i);
 			} else {
 				if (ac == null) {
 					ac = curr.ac;
@@ -75,7 +75,6 @@ public class AppbaseBullkBuilder {
 				}
 			}
 		}
-		System.out.println(jsonBody);
 		return ac.prepareBulkExecute(jsonBody).execute();
 	}
 }

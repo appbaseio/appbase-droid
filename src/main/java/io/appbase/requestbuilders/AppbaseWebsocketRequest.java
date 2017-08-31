@@ -50,7 +50,6 @@ public class AppbaseWebsocketRequest {
 		try {
 			client = new AppbaseWebsocketClient(uri, appbaseOnMessage);
 			client.connectBlocking();
-			System.out.println(json.toString());
 			client.send(json.toString());
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
