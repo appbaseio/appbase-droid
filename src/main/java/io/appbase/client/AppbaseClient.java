@@ -15,6 +15,8 @@ import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
 
+import org.java_websocket.util.Base64;
+
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
@@ -612,7 +614,7 @@ public class AppbaseClient {
 		JsonArray arr = new JsonArray();
 		arr.add(type);
 		object.add("type", arr);
-		String path = ".percolator/webhooks-0-" + type + "-0-" + getSerializedJson(query);
+		String path = ".percolator/webhooks-0-" + type + "-0-" + Base64.encodeBytes(getSerializedJson(query).getBytes());
 		return prepareIndex(path, object);
 	}
 

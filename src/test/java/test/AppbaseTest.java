@@ -280,20 +280,17 @@ public class AppbaseTest {
 	}
 
 	@Test
-	public void searchStreamToURLTest() {
+	public void HsearchStreamToURLTest() {
 		Response r = appbase
 				.prepareSearchStreamToURL(type, "{\"query\":{\"term\":{ \"price\" : 5595}}}",
 						"{ \"webhooks\": [  {   \"url\": \"http://requestb.in/1e5e7bn1\"  } ], \"query\": {  \"match_all\": {} }, \"type\": [  \"tweet\" ]}")
 				.execute();
 		try {
-			System.out.println(r.body().string());
+			System.out.println("search stream to url:\n"+r.body().string());
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
-
-		System.out.println("AAAAAAA");
-
 	}
 
 	public void testIndex() {
