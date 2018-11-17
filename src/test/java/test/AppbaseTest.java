@@ -250,7 +250,7 @@ public class AppbaseTest {
 
 		JsonObject object = parser.parse(result).getAsJsonObject();
 		assertTrue(object.isJsonObject());
-		assertEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
+		assertEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 1);
 		generatedPrice = 5595;
 		body = "{ \"term\": { \"price\": " + generatedPrice + " } }";
 
