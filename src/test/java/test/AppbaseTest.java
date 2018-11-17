@@ -26,8 +26,8 @@ public class AppbaseTest {
 	static String randomId = null;
 	static String randomIds[] = null;
 	static AppbaseClient appbase;
-	static final String user = "vspynv5Dg", pass = "f54091f5-ff77-4c71-a14c-1c29ab93fd15", type = "product", id = "1",
-			URL = "http://scalr.api.appbase.io", appName = "Trial1796";
+	static final String user = "MoMTuvtum", pass = "ecf20509-33ac-4864-b85c-e3fb691ea1db", type = "_doc", id = "1",
+			URL = "https://scalr.api.appbase.io", appName = "droid-test";
 	static String jsonString = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
 
 	static byte[] jsonBytes;
@@ -99,16 +99,16 @@ public class AppbaseTest {
 		try {
 			result = appbase.prepareIndex(type, randomIds[0], jsonString).execute().body().string();
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
 
 		assertNotNull(result);
+
 		JsonObject object = parser.parse(result).getAsJsonObject();
-		String created = object.get("created").getAsString();
+		String created = object.get("result").getAsString();
 
 		assertNotNull(created);
-		assertEquals("true", created);
+		assertEquals("created", created);
 
 		result = null;
 
@@ -121,10 +121,10 @@ public class AppbaseTest {
 
 		assertNotNull(result);
 		object = parser.parse(result).getAsJsonObject();
-		created = object.get("created").getAsString();
+		created = object.get("result").getAsString();
 
 		assertNotNull(created);
-		assertEquals("true", created);
+		assertEquals("created", created);
 
 		result = null;
 
@@ -137,33 +137,27 @@ public class AppbaseTest {
 
 		assertNotNull(result);
 		object = parser.parse(result).getAsJsonObject();
-		created = object.get("created").getAsString();
+		created = object.get("result").getAsString();
 
 		assertNotNull(created);
-		assertEquals("true", created);
+		assertEquals("created", created);
 
 	}
 
 	@Test
 	public void BupdateTest() {
 		int generatedPrice = 5;
-		String jsonDoc = "{doc: {\"price\": " + generatedPrice + "}}";
+		String jsonDoc = "{ \"doc\": {\"price\": " + generatedPrice + "}}";
 		changeAll(jsonDoc);
 
-		Response result = null;
-
-		result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute();
-
+		Response result = appbase.prepareUpdate(type, randomIds[0], null, jsonDoc).execute();
 		JsonObject object = null;
 		try {
 			object = parser.parse(result.body().string()).getAsJsonObject();
-		} catch (JsonSyntaxException e) {
-
-			e.printStackTrace();
-		} catch (IOException e) {
-
+		} catch (JsonSyntaxException | IOException e) {
 			e.printStackTrace();
 		}
+		assertNotNull(object);
 
 		assertNotEquals(object.get("_version").getAsInt(), 1);
 		assertEquals(object.getAsJsonObject("_shards").get("successful"),
@@ -174,11 +168,7 @@ public class AppbaseTest {
 
 		try {
 			object = parser.parse(result.body().string()).getAsJsonObject();
-		} catch (JsonSyntaxException e) {
-
-			e.printStackTrace();
-		} catch (IOException e) {
-
+		} catch (JsonSyntaxException | IOException e) {
 			e.printStackTrace();
 		}
 		assertEquals(object.getAsJsonObject("_shards").get("successful"),
@@ -194,42 +184,41 @@ public class AppbaseTest {
 		try {
 			result = appbase.prepareDelete(type, randomIds[0]).execute().body().string();
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
+		assertNotNull(result);
 
 		JsonObject object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.get("found").getAsBoolean(), true);
+		assertNotNull(object);
+		assertEquals("deleted", object.get("result").getAsString());
 		assertEquals(object.getAsJsonObject("_shards").get("failed").getAsInt(), 0);
 
 		try {
 			result = appbase.prepareDelete(type, randomIds[0]).execute().body().string();
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
+		assertNotNull(result);
 
 		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.get("found").getAsBoolean(), false);
+		assertNotNull(object);
+		assertEquals("not_found", object.get("result").getAsString());
 		assertEquals(object.getAsJsonObject("_shards").get("failed").getAsInt(), 0);
 
 	}
 
 	@Test
 	public void EgetTest() {
-
 		String result = null;
 
 		try {
 			result = appbase.prepareGet(type, randomIds[1]).execute().body().string();
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
 
 		JsonObject object = parser.parse(result).getAsJsonObject();
-		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.get("found").getAsBoolean(), false);
+		assertFalse(object.get("found").getAsBoolean());
 	}
 
 	@Test
@@ -243,28 +232,27 @@ public class AppbaseTest {
 		for (Map.Entry<String, JsonElement> entry : entries) {
 			ret.add(entry.getKey());
 		}
-		assertEquals(object.isJsonObject(), true);
+		assertTrue(object.isJsonObject());
 	}
 
 	@Test
 	public void GsearchTest() {
 		int generatedPrice = 5;
-		String body = "{\"query\":{\"term\":{ \"price\" : " + generatedPrice + "}}}";
+		String body = "{ \"term\": { \"price\": " + generatedPrice + " } }";
 		String result = null;
 
 		try {
 			result = appbase.prepareSearch(type, body).execute().body().string();
 		} catch (IOException e) {
-
 			e.printStackTrace();
 		}
+		assertNotNull(result);
 
 		JsonObject object = parser.parse(result).getAsJsonObject();
-
-		assertEquals(object.isJsonObject(), true);
+		assertTrue(object.isJsonObject());
 		assertEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
 		generatedPrice = 5595;
-		body = "{\"query\":{\"term\":{ \"price\" : " + generatedPrice + "}}}";
+		body = "{ \"term\": { \"price\": " + generatedPrice + " } }";
 
 		try {
 			result = appbase.prepareSearch(type, body).execute().body().string();
@@ -274,9 +262,8 @@ public class AppbaseTest {
 		}
 
 		object = parser.parse(result).getAsJsonObject();
-		assertEquals(object.isJsonObject(), true);
+		assertTrue(object.isJsonObject());
 		assertNotEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
-
 	}
 
 	@Test
