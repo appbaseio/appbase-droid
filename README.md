@@ -3,6 +3,17 @@
 
 The missing Android client for Elasticsearch and appbase.io.
 
+## Download
+
+Download [the latest JAR](https://search.maven.org/remote_content?g=io.appbase&a=appbase-droid&v=LATEST) or configure this dependency:
+
+    <dependency>
+      <groupId>io.appbase</groupId>
+      <artifactId>appbase-droid</artifactId>
+      <version>1.0.0</version>
+    </dependency>
+
+Snapshots of the development version are available in [Sonatype's `snapshots` repository](https://oss.sonatype.org/content/repositories/snapshots/).
 
 ### Running Locally
 

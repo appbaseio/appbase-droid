@@ -17,3 +17,4 @@ target*
 hs_err_pid*
 .idea
 *.iml
+settings.xml
