@@ -36,15 +36,13 @@ Our design goals in building `appbase-droid` are:
 
 ## Quick Start
 
-TBD: How to get the library and write a basic code.
-
-1. Creating the client.
+1. **Creating the client**
 
     ```java
     AppbaseClient client = new AppbaseClient(url, appname, username, password);
     ```
 
-2. Index a document.
+2. **Index a document**
 
     ```java
     String result = client.prepareIndex(type, id, body)
@@ -73,7 +71,7 @@ TBD: How to get the library and write a basic code.
     }
     ```
 
-3.  Update a document.
+3.  **Update a document**
 
     ```java
     String result = client.prepareUpdate(type, id, parameters, doc)
@@ -102,7 +100,7 @@ TBD: How to get the library and write a basic code.
     }
     ```
 
-4. Delete a document.
+4. **Delete a document**
 
     ```java
     String result = client.prepareDelete(type, id)
@@ -129,7 +127,7 @@ TBD: How to get the library and write a basic code.
     }
     ```
 
-5. Get a document.
+5. **Get a document**
 
     ```java
     String result = client.prepareGet(type, id)
@@ -148,7 +146,7 @@ TBD: How to get the library and write a basic code.
     }
     ```
 
-6. Make a search request.
+6. **Make a search request**
     ```java
     String query =  "{ \"term\": { \"price\": \"100\" } }";
     String result = client.prepareSearch(type, query)
