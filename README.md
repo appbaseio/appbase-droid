@@ -36,13 +36,13 @@ Our design goals in building `appbase-droid` are:
 
 ## Quick Start
 
-1. **Creating the client**
+- **Creating the client**
 
     ```java
     AppbaseClient client = new AppbaseClient(url, appname, username, password);
     ```
 
-2. **Index a document**
+- **Index a document**
 
     ```java
     String result = client.prepareIndex(type, id, body)
@@ -71,7 +71,7 @@ Our design goals in building `appbase-droid` are:
     }
     ```
 
-3.  **Update a document**
+- **Update a document**
 
     ```java
     String result = client.prepareUpdate(type, id, parameters, doc)
@@ -100,7 +100,7 @@ Our design goals in building `appbase-droid` are:
     }
     ```
 
-4. **Delete a document**
+- **Delete a document**
 
     ```java
     String result = client.prepareDelete(type, id)
@@ -127,7 +127,7 @@ Our design goals in building `appbase-droid` are:
     }
     ```
 
-5. **Get a document**
+- **Get a document**
 
     ```java
     String result = client.prepareGet(type, id)
@@ -146,7 +146,7 @@ Our design goals in building `appbase-droid` are:
     }
     ```
 
-6. **Make a search request**
+- **Make a search request**
     ```java
     String query =  "{ \"term\": { \"price\": \"100\" } }";
     String result = client.prepareSearch(type, query)
