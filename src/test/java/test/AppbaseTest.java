@@ -26,8 +26,8 @@ public class AppbaseTest {
 	static String randomId = null;
 	static String randomIds[] = null;
 	static AppbaseClient appbase;
-	static final String user = "MoMTuvtum", pass = "ecf20509-33ac-4864-b85c-e3fb691ea1db", type = "_doc", id = "1",
-			URL = "https://scalr.api.appbase.io", appName = "droid-test";
+	static final String user = "HcMs8nqM5", pass = "53b342fd-4f27-4848-86e0-1c6233e91211", type = "_doc", id = "1",
+			URL = "https://scalr.api.appbase.io", appName = "appbase-droid";
 	static String jsonString = "{\"department_id\": 1,\"department_name\": \"Books\",\"name\": \"A Fake Book on Network Routing\",\"price\": 5595}";
 
 	static byte[] jsonBytes;
