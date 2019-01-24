@@ -238,7 +238,7 @@ public class AppbaseTest {
 	@Test
 	public void GsearchTest() {
 		int generatedPrice = 5;
-		String body = "{ \"term\": { \"price\": " + generatedPrice + " } }";
+		String body = "{ \"query\": { \"term\": { \"price\": " + generatedPrice + " } } }";
 		String result = null;
 
 		try {
@@ -252,7 +252,7 @@ public class AppbaseTest {
 		assertTrue(object.isJsonObject());
 		assertEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
 		generatedPrice = 5595;
-		body = "{ \"term\": { \"price\": " + generatedPrice + " } }";
+		body = "{ \"query\": { \"term\": { \"price\": " + generatedPrice + " } } }";
 
 		try {
 			result = appbase.prepareSearch(type, body).execute().body().string();
