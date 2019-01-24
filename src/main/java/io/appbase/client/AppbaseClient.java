@@ -162,12 +162,6 @@ public class AppbaseClient {
 
 	// getURls
 
-	// querify
-	private String querify(String body) {
-		return "{\"query\":" + body + "}";
-
-	}
-
 	/**
 	 * Returns the constructed URL based on the type argument.
 	 * 
@@ -558,7 +552,7 @@ public class AppbaseClient {
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, String body) {
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").post(querify(body));
+				.url(getURL(type) + SEPARATOR + "_search").post(body);
 	}
 
 	/**
@@ -574,7 +568,7 @@ public class AppbaseClient {
 
 	public AppbaseRequestBuilder prepareSearch(String[] type, String body) {
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").post(querify(body));
+				.url(getURL(type) + SEPARATOR + "_search").post(body);
 	}
 
 	/**
@@ -607,7 +601,6 @@ public class AppbaseClient {
 	 */
 	public AppbaseRequestBuilder prepareSearchStreamToURL(String type, String query, String webhook) {
 		JsonParser parser = new JsonParser();
-		query = querify(query);
 		JsonObject object = parser.parse(query).getAsJsonObject();
 		JsonObject o = parser.parse(webhook).getAsJsonObject();
 		object.add("webhooks", o.get("webhooks"));
