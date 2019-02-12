@@ -195,7 +195,7 @@ See the [online documentation reference](https://opensource.appbase.io/appbase-d
 
 ## Example
 
-Link to an example app built with `appbase-droid`.
+Checkout [an example app](https://github.com/appbaseio-apps/AndroidSampleApp) built with `appbase-droid`.
 
 ## How To Run Locally
 
