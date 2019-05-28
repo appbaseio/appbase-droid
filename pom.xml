@@ -4,7 +4,7 @@
 
     <groupId>io.appbase</groupId>
     <artifactId>appbase-droid</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.1.0</version>
     <packaging>jar</packaging>
 
     <name>io.appbase:appbase-droid</name>
