@@ -148,7 +148,7 @@ Our design goals in building `appbase-droid` are:
 
 - **Make a search request**
     ```java
-    String query =  "{ \"term\": { \"price\": \"100\" } }";
+    String query =  "{ \"query\": { \"term\": { \"price\": \"100\" } } }";
     String result = client.prepareSearch(type, query)
       .execute()
       .body()
