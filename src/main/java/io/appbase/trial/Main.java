@@ -11,6 +11,7 @@ public class Main {
 	public static void main(String[] args) {
 
 		AppbaseClient ac = new AppbaseClient("https://scalr.api.appbase.io", "shopify-flipkart-test", "xJC6pHyMz", "54fabdda-4f7d-43c9-9960-66ff45d8d4cf");
+		
 		String query = "{ \"query\":{ \"bool\":{ \"must\":{ \"bool\":{ \"should\":[ { \"multi_match\":{ \"query\": \"oth\" ," +
 				" \"fields\":[ \"title\", \"title.search\" ], \"operator\":\"and\" } }," +
 				" { \"multi_match\":{ \"query\": \"oth\" ,  \"fields\":[ \"title\", \"title.search\" ], \"type\":\"phrase_prefix\"," +
