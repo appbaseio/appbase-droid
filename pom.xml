@@ -1,5 +1,4 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>io.appbase</groupId>
@@ -8,7 +7,7 @@
     <packaging>jar</packaging>
 
     <name>io.appbase:appbase-droid</name>
-    <description>Java library for REST api of elasticsearch</description>
+    <description>Android / Java lib for ElasticSearch</description>
     <url>https://appbase.io/</url>
 
     <licenses>
@@ -21,8 +20,8 @@
 
     <developers>
         <developer>
-            <name>Tirth Shah</name>
-            <email>tirthcshah@gmail.com</email>
+            <name>Appbase Inc.</name>
+            <email>support@appbase.io</email>
             <organization>appbase.io</organization>
             <organizationUrl>https://appbase.io/</organizationUrl>
         </developer>
@@ -32,7 +31,8 @@
         <connection>scm:git:git@github.com:appbaseio/appbase-droid.git</connection>
         <developerConnection>scm:git:git@github.com:appbaseio/appbase-droid.git</developerConnection>
         <url>git@github.com:appbaseio/appbase-droid.git</url>
-    </scm>
+      <tag>HEAD</tag>
+  </scm>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
