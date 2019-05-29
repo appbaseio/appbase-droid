@@ -266,20 +266,6 @@ public class AppbaseTest {
 		assertNotEquals(object.getAsJsonObject("hits").get("total").getAsInt(), 0);
 	}
 
-	@Test
-	public void HsearchStreamToURLTest() {
-		Response r = appbase
-				.prepareSearchStreamToURL(type, "{\"query\":{\"term\":{ \"price\" : 5595}}}",
-						"{ \"webhooks\": [  {   \"url\": \"http://requestb.in/1e5e7bn1\"  } ], \"query\": {  \"match_all\": {} }, \"type\": [  \"tweet\" ]}")
-				.execute();
-		try {
-			System.out.println("search stream to url:\n"+r.body().string());
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-	}
-
 	public void testIndex() {
 
 		String user = "7eJWHfD4P", pass = "431d9cea-5219-4dfb-b798-f897f3a02665", URL = "http://scalr.api.appbase.io",
