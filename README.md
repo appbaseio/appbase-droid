@@ -31,7 +31,7 @@ We built this as there are currently no good or maintained Elasticsearch librari
 Our design goals in building `appbase-droid` are:
 1. Provide a lightweight library for querying right from Android (**1MB** in size),
 2. Maintain compatibility with Java so it can also be used as a lightweight Java alternative (**20x** lighter than the official Elasticsearch client library),
-3. Only support methods related document and query DSL, ideally your Elasticsearch hosting environment comes with a read-only access.
+3. Only support methods related to document and query DSL, ideally your Elasticsearch hosting environment comes with a read-only access.
 4. **Bonus:** Support for streaming data queries when Elasticsearch is hosted on appbase.io app; build live charts, newsfeeds, streaming search.
 
 ## Quick Start
@@ -41,6 +41,7 @@ Our design goals in building `appbase-droid` are:
     ```java
     AppbaseClient client = new AppbaseClient(url, appname, username, password);
     ```
+**Note:** If you are hosting with appbase.io the url should be "https://scalr.api.appbase.io". The username should refer to the first part of the API credentials, and the password as the second part of it. You can get an idea on how to map the appname, username, password by viewing [this GIF](http://g.recordit.co/hXczegy4cH.gif).
 
 - **Index a document**
 
