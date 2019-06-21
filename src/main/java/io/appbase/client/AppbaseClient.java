@@ -611,6 +611,20 @@ public class AppbaseClient {
 		return prepareIndex(path, object);
 	}
 
+	/**
+	 * Prepare an {@link AppbaseRequestBuilder} object for click analytics of a particular search ID
+	 *
+	 * @param body
+	 * 			  the query body (example: {"X-Search-ID": "1234", "X-Search-Click": "true", "X-Search-ClickPosition": "2", "X-Search-Conversion": "true"})
+	 * 			  Here, the parameter "X-Search-ID" is compulsory for the request to complete successfully
+	 *
+	 * @return returns the analytics for the given search ID
+	 */
+	public AppbaseRequestBuilder prepareAnalytics(String body) {
+		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
+				.url(constructURL() + SEPARATOR + "_analytics").post(body);
+	}
+
 	private String getSerializedJson(String query) {
 		JsonParser parser = new JsonParser();
 		JsonObject object = parser.parse(query).getAsJsonObject();

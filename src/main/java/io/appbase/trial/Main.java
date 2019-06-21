@@ -1,10 +1,7 @@
 package io.appbase.trial;
 import java.io.IOException;
 
-import com.google.gson.JsonParser;
-
 import io.appbase.client.AppbaseClient;
-import io.appbase.client.Stream;
 
 public class Main {
 
@@ -17,9 +14,20 @@ public class Main {
 				" { \"multi_match\":{ \"query\": \"oth\" ,  \"fields\":[ \"title\", \"title.search\" ], \"type\":\"phrase_prefix\"," +
 				" \"operator\":\"and\" } } ], \"minimum_should_match\":\"1\" } } } } }";
 
+		String analyticsQuery = "{ \"X-Search-Id\": \"2204483485796\", \"X-Search-Click\": \"true\", \"X-Search-ClickPosition\": \"2\", \"X-Search-Conversion\": \"true\" }";
+
+		// Making a search query
 		try {
 			String response = ac.prepareSearch("products",query).execute().body().string();
 			System.out.println(response);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Recording Analytics
+		try {
+			String analytics = ac.prepareAnalytics(analyticsQuery).execute().body().string();
+			System.out.println(analytics);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
