@@ -2,6 +2,7 @@ package io.appbase.trial;
 import java.io.IOException;
 
 import io.appbase.client.AppbaseClient;
+import okhttp3.Response;
 
 public class Main {
 
@@ -18,13 +19,24 @@ public class Main {
 
 		// Making a search query
 		try {
-			String response = ac.prepareSearch("products",query).execute().body().string();
-			System.out.println(response);
+			Response response = ac.prepareSearch("products", query).execute();
+			String body = response.body().string();
+			String XSearchId = response.header("X-Search-Id");
+			System.out.println(body);
+			System.out.println("X-Search-Id " + XSearchId);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
-		// Recording Analytics
+		// Recording Analytics with default X-Search-Id
+		try {
+			String analytics = ac.prepareAnalytics(null).execute().body().string();
+			System.out.println(analytics);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		// Recording Analytics with custom X-Search-Id
 		try {
 			String analytics = ac.prepareAnalytics(analyticsQuery).execute().body().string();
 			System.out.println(analytics);

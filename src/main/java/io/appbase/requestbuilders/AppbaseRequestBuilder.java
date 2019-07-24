@@ -310,11 +310,16 @@ public class AppbaseRequestBuilder {
 	public Response execute() {
 		builder.url(uri.toString());
 		try {
-			return ac.newCall(builder.build()).execute();
+			Response response = ac.newCall(builder.build()).execute();
+
+			if(response.header("X-Search-Id") != null)
+				ac.setXSearchId(response.header("X-Search-Id"));
+
+			return response;
+
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;
 		}
 	}
-
 }

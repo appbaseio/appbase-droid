@@ -47,6 +47,8 @@ public class AppbaseClient {
 	private OkHttpClient ok;
 	private String baseURL, app, URL, basicauth = null;
 	private static final String SEPARATOR = "/";
+	private static final String XSEARCHQUERY = "X-Search-Query";
+	private String XSearchId = null;
 
 	/**
 	 * Constructor when the elasticsearch setup requires a user name and a
@@ -206,6 +208,10 @@ public class AppbaseClient {
 	public void setApp(String app) {
 		this.app = app;
 		constructURL();
+	}
+
+	public void setXSearchId(String XSearchId) {
+		this.XSearchId = XSearchId;
 	}
 
 	/**
@@ -552,7 +558,23 @@ public class AppbaseClient {
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, String body) {
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").post(body);
+				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, type).post(body);
+	}
+
+	/**
+	 * Prepare an {@link AppbaseRequestBuilder} object for searching by adding the
+	 * search body and a header for getting X-Search-Id
+	 *
+	 * @param type
+	 *            type in which the search must take place
+	 * @param body
+	 *            the query body (example: {"query":{"term":{ "price" : 5595}}}
+	 *            )
+	 * @return returns the search result corresponding to the query
+	 */
+	public AppbaseRequestBuilder prepareSearch(String type, String body, String XSearchQuery) {
+		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
+				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, XSearchQuery).post(body);
 	}
 
 	/**
@@ -565,16 +587,35 @@ public class AppbaseClient {
 	 *            the query body (example: {"query":{"term":{ "price" : 5595}}})
 	 * @return returns the search result corresponding to the query
 	 */
-
 	public AppbaseRequestBuilder prepareSearch(String[] type, String body) {
+		AppbaseRequestBuilder appbaseRequestBuilder;
+		if(type == null)
+			return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
+					.url(getURL(type) + SEPARATOR + "_search").post(body);
+
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").post(body);
+				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, type[0]).post(body);
+	}
+
+	/**
+	 * Prepare an {@link AppbaseRequestBuilder} object for searching by adding the
+	 * query body within multiple types and a header for getting X-Search-Id
+	 *
+	 * @param type
+	 *            array of all the types in which the search must take place
+	 * @param body
+	 *            the query body (example: {"query":{"term":{ "price" : 5595}}})
+	 * @return returns the search result corresponding to the query
+	 */
+	public AppbaseRequestBuilder prepareSearch(String[] type, String body, String XSearchQuery) {
+		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
+				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, XSearchQuery).post(body);
 	}
 
 	/**
 	 * Prepare an {@link AppbaseRequestBuilder} object to search by passing the
 	 * query as a List of param objects. This will be added like query
-	 * parameters not in the body.
+	 * parameters and not in the body.
 	 * 
 	 * @param type
 	 *            type in which the search must take place
@@ -584,8 +625,23 @@ public class AppbaseClient {
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, List<Param> parameters) {
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").addQueryParams(parameters).post(null);
+				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, type).addQueryParams(parameters).post(null);
+	}
 
+	/**
+	 * Prepare an {@link AppbaseRequestBuilder} object to search by passing the
+	 * query as a List of param objects and a header for getting X-Search-Id .
+	 * This param objects will be added like query parameters and not in the body.
+	 *
+	 * @param type
+	 *            type in which the search must take place
+	 * @param parameters
+	 *            List of Parameter objects which
+	 * @return returns the search result corresponding to the query
+	 */
+	public AppbaseRequestBuilder prepareSearch(String type, List<Param> parameters, String XSearchQuery) {
+		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
+				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, XSearchQuery).addQueryParams(parameters).post(null);
 	}
 
 	/**
@@ -615,14 +671,18 @@ public class AppbaseClient {
 	 * Prepare an {@link AppbaseRequestBuilder} object for click analytics of a particular search ID
 	 *
 	 * @param body
-	 * 			  the query body (example: {"X-Search-ID": "1234", "X-Search-Click": "true", "X-Search-ClickPosition": "2", "X-Search-Conversion": "true"})
-	 * 			  Here, the parameter "X-Search-ID" is compulsory for the request to complete successfully
+	 * 			  the query body (example: {"X-Search-Id": "1234", "X-Search-Click": "true", "X-Search-ClickPosition": "2", "X-Search-Conversion": "true"})
 	 *
 	 * @return returns the analytics for the given search ID
 	 */
 	public AppbaseRequestBuilder prepareAnalytics(String body) {
+		if(body == null)
+			body = "\"X-Search-Id\": \"" + XSearchId + "\"";
+		else if(!body.contains("X-Search-Id"))
+			body += ", \"X-Search-Id\": \"" + XSearchId + "\"";
+
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(constructURL() + SEPARATOR + "_analytics").post(body);
+					.url(constructURL() + SEPARATOR + "_analytics").post(body);
 	}
 
 	private String getSerializedJson(String query) {
