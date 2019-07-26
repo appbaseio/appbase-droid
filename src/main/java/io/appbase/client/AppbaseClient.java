@@ -550,15 +550,17 @@ public class AppbaseClient {
 	 * search body
 	 * 
 	 * @param type
-	 *            type in which the search must take place
+	 *            type in which the search must take place (Default value for type is _doc)
 	 * @param body
 	 *            the query body (example: {"query":{"term":{ "price" : 5595}}}
 	 *            )
 	 * @return returns the search result corresponding to the query
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, String body) {
+		if(type == null)
+			type = "_doc";
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, type).post(body);
+				.url(getURL(type) + SEPARATOR + "_search").post(body);
 	}
 
 	/**
@@ -566,48 +568,17 @@ public class AppbaseClient {
 	 * search body and a header for getting X-Search-Id
 	 *
 	 * @param type
-	 *            type in which the search must take place
+	 *            type in which the search must take place (Default value for type is _doc)
 	 * @param body
 	 *            the query body (example: {"query":{"term":{ "price" : 5595}}}
 	 *            )
+	 * @param XSearchQuery
+	 * 			  the query term that is associated with this query, useful for capturing search analytics when using appbase.io
 	 * @return returns the search result corresponding to the query
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, String body, String XSearchQuery) {
-		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, XSearchQuery).post(body);
-	}
-
-	/**
-	 * Prepare an {@link AppbaseRequestBuilder} object for searching by adding the
-	 * query body within multiple types
-	 * 
-	 * @param type
-	 *            array of all the types in which the search must take place
-	 * @param body
-	 *            the query body (example: {"query":{"term":{ "price" : 5595}}})
-	 * @return returns the search result corresponding to the query
-	 */
-	public AppbaseRequestBuilder prepareSearch(String[] type, String body) {
-		AppbaseRequestBuilder appbaseRequestBuilder;
 		if(type == null)
-			return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-					.url(getURL(type) + SEPARATOR + "_search").post(body);
-
-		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, type[0]).post(body);
-	}
-
-	/**
-	 * Prepare an {@link AppbaseRequestBuilder} object for searching by adding the
-	 * query body within multiple types and a header for getting X-Search-Id
-	 *
-	 * @param type
-	 *            array of all the types in which the search must take place
-	 * @param body
-	 *            the query body (example: {"query":{"term":{ "price" : 5595}}})
-	 * @return returns the search result corresponding to the query
-	 */
-	public AppbaseRequestBuilder prepareSearch(String[] type, String body, String XSearchQuery) {
+			type = "_doc";
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
 				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, XSearchQuery).post(body);
 	}
@@ -618,14 +589,16 @@ public class AppbaseClient {
 	 * parameters and not in the body.
 	 * 
 	 * @param type
-	 *            type in which the search must take place
+	 *            type in which the search must take place (Default value for type is _doc)
 	 * @param parameters
 	 *            List of Parameter objects which
 	 * @return returns the search result corresponding to the query
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, List<Param> parameters) {
+		if(type == null)
+			type = "_doc";
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
-				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, type).addQueryParams(parameters).post(null);
+				.url(getURL(type) + SEPARATOR + "_search").addQueryParams(parameters).post(null);
 	}
 
 	/**
@@ -634,12 +607,16 @@ public class AppbaseClient {
 	 * This param objects will be added like query parameters and not in the body.
 	 *
 	 * @param type
-	 *            type in which the search must take place
+	 *            type in which the search must take place (Default value for type is _doc)
 	 * @param parameters
 	 *            List of Parameter objects which
+	 * @param XSearchQuery
+	 * 			  the query term that is associated with this query, useful for capturing search analytics when using appbase.io
 	 * @return returns the search result corresponding to the query
 	 */
 	public AppbaseRequestBuilder prepareSearch(String type, List<Param> parameters, String XSearchQuery) {
+		if(type == null)
+			type = "_doc";
 		return new AppbaseRequestBuilder(this, null, null, AppbaseRequestBuilder.Rest)
 				.url(getURL(type) + SEPARATOR + "_search").header(XSEARCHQUERY, XSearchQuery).addQueryParams(parameters).post(null);
 	}
